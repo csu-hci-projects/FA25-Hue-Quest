@@ -6,8 +6,7 @@ public class Manager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     IPlanet currentPlanet;
     [SerializeField] Player player;
-    [SerializeField] GameObject playerCamera;
-    [SerializeField] GameObject planetCamera;
+
     void Start()
     {
         IPlanet[] allObjectsWithInterface = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<IPlanet>().ToArray();
@@ -22,7 +21,6 @@ public class Manager : MonoBehaviour
 
     void Update()
     {
-        switchCamera();
     }
 
     public IPlanet getPlanet()
@@ -30,20 +28,7 @@ public class Manager : MonoBehaviour
         return currentPlanet;
     }
 
-    void switchCamera()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (planetCamera)
-            {
-                planetCamera.SetActive(false);
-            }
-            else
-            {
-                planetCamera.SetActive(true);
-            }
-        }
-    }
+    
 
 
 }

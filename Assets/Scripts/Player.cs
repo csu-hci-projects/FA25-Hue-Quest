@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -7,11 +8,18 @@ public class Player : MonoBehaviour
     [SerializeField] float rotateSpeed = 12.0f;
     Rigidbody rb;
 
+    [SerializeField] GameObject playerCamera;
+    [SerializeField] GameObject planetCamera;
+
+    bool planetCameraActive;
+    float flipPosition = 22.4f;
+
     [SerializeField] Manager manager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        planetCameraActive = false;
     }
 
     // Update is called once per frame
@@ -19,6 +27,7 @@ public class Player : MonoBehaviour
     {
         getInput();
         processGravity();
+        switchCamera();
     }
 
     void getInput()
@@ -44,7 +53,25 @@ public class Player : MonoBehaviour
         Debug.DrawRay(transform.position, diff.normalized, Color.red);
     }
 
-    public void setGravityTarget(IPlanet target) {
+    public void setGravityTarget(IPlanet target)
+    {
         gravityTarget = target;
+    }
+    
+    void switchCamera()
+    {
+        if (transform.position.z > 5)
+        {
+            planetCamera.GetComponent<CinemachineOrbitalFollow>().TargetOffset.Set(0, 0, flipPosition);
+        }
+        else
+        {
+           planetCamera.GetComponent<CinemachineOrbitalFollow>().TargetOffset.Set(0, 0, 0); 
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            planetCameraActive = !planetCameraActive;
+            planetCamera.SetActive(planetCameraActive);
+        }
     }
 }
