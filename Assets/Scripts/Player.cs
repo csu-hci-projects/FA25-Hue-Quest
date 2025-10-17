@@ -63,7 +63,6 @@ public class Player : MonoBehaviour
         if (transform.position.z > -12)
         {
             planetCamera.GetComponent<CinemachineOrbitalFollow>().TargetOffset.Set(0, 0, flipPosition);
-            Debug.Log("inside swap");
         }
         else
         {

@@ -190,6 +190,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4473976070600160197, guid: 23309b6fd3003c04bbe816c107ea736d, type: 3}
   m_PrefabInstance: {fileID: 7246903391384599130}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &384301228 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1733232729480874572, guid: 23309b6fd3003c04bbe816c107ea736d, type: 3}
+  m_PrefabInstance: {fileID: 7246903391384599130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!45 &384301234
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384301228}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: a4be220830e90ea4eb88b48b7fd376ce, type: 2}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +336,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8462953029973031472, guid: 23309b6fd3003c04bbe816c107ea736d, type: 3}
   m_PrefabInstance: {fileID: 7246903391384599130}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &596701224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596701216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineHardLookAt
+  LookAtOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,8 +527,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1760698385355731761, guid: 23309b6fd3003c04bbe816c107ea736d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760698385355731761, guid: 23309b6fd3003c04bbe816c107ea736d, type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760698385355731761, guid: 23309b6fd3003c04bbe816c107ea736d, type: 3}
       propertyPath: field of view
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760698385355731761, guid: 23309b6fd3003c04bbe816c107ea736d, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.2735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760698385355731761, guid: 23309b6fd3003c04bbe816c107ea736d, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.17185088
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760698385355731761, guid: 23309b6fd3003c04bbe816c107ea736d, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.10711107
+      objectReference: {fileID: 0}
+    - target: {fileID: 2903454846128879631, guid: 23309b6fd3003c04bbe816c107ea736d, type: 3}
+      propertyPath: m_VolumeFrameworkUpdateModeOption
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3469420224632159723, guid: 23309b6fd3003c04bbe816c107ea736d, type: 3}
       propertyPath: m_Name
@@ -625,7 +676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8199806797131215607, guid: 23309b6fd3003c04bbe816c107ea736d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00000002580671
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8199806797131215607, guid: 23309b6fd3003c04bbe816c107ea736d, type: 3}
       propertyPath: m_LocalRotation.y
@@ -650,7 +701,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1733232729480874572, guid: 23309b6fd3003c04bbe816c107ea736d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 384301234}
+    - targetCorrespondingSourceObject: {fileID: 8462953029973031472, guid: 23309b6fd3003c04bbe816c107ea736d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 596701224}
   m_SourcePrefab: {fileID: 100100000, guid: 23309b6fd3003c04bbe816c107ea736d, type: 3}
 --- !u!114 &7268411796287451504 stripped
 MonoBehaviour:
