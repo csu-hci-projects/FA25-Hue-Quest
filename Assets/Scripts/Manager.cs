@@ -28,7 +28,21 @@ public class Manager : MonoBehaviour
         return currentPlanet;
     }
 
-    
+    public void Startgame()
+    {
+        Debug.Log("Start Button Pressed");
+        player.Activate();
+    }
 
+    public void Quitgame()
+    {
+        Debug.Log("Exit Button Pressed");
+        Application.Quit();
+    }
+    
+    public void Settings()
+    {
+        Debug.Log("Settings Button Pressed");
+    }
 
 }

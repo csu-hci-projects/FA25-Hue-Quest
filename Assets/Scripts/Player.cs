@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 
     bool planetCameraActive;
     float flipPosition = 22.4f;
+    bool AllowToMove;
 
     [SerializeField] Manager manager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -20,14 +21,22 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         planetCameraActive = false;
+        AllowToMove = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        getInput();
+        if (AllowToMove)
+        {
+            getInput();
+        }
         processGravity();
         switchCamera();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Deactivate();
+        }
     }
 
     void getInput()
@@ -57,7 +66,7 @@ public class Player : MonoBehaviour
     {
         gravityTarget = target;
     }
-    
+
     void switchCamera()
     {
         if (transform.position.z > -12)
@@ -66,12 +75,24 @@ public class Player : MonoBehaviour
         }
         else
         {
-           planetCamera.GetComponent<CinemachineOrbitalFollow>().TargetOffset.Set(0, 0, 0); 
+            planetCamera.GetComponent<CinemachineOrbitalFollow>().TargetOffset.Set(0, 0, 0);
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             planetCameraActive = !planetCameraActive;
             planetCamera.SetActive(planetCameraActive);
         }
+    }
+
+    public void Activate()
+    {
+        playerCamera.SetActive(true);
+        AllowToMove = true;
+    }
+    public void Deactivate()
+    {
+        playerCamera.SetActive(false);
+        planetCamera.SetActive(false);
+        AllowToMove = false;
     }
 }
