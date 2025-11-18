@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 1078341080403405009}
   - component: {fileID: 1600541917375062427}
   - component: {fileID: 7478568292052052853}
+  - component: {fileID: 2553491416279969823}
   m_Layer: 0
   m_Name: Stylized Astronaut
   m_TagString: Player
@@ -248,8 +249,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411318141451944708}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.003300244, y: 0.8007755, z: -0.0004560823, w: 0.59895533}
-  m_LocalPosition: {x: -20.985153, y: -0.011893764, z: 1.9505525}
+  m_LocalRotation: {x: -0.0033291625, y: 0.6837841, z: 0.0001276634, w: 0.72967666}
+  m_LocalPosition: {x: -57.42, y: 1.27, z: -2.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -258,7 +259,7 @@ Transform:
   - {fileID: 4744563531311668700}
   - {fileID: 3225110986773807357}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -0.185, y: 106.41, z: -0.334}
+  m_LocalEulerAnglesHint: {x: -0.288, y: 86.281, z: -0.25}
 --- !u!95 &2917564912993297724
 Animator:
   serializedVersion: 7
@@ -335,6 +336,27 @@ MonoBehaviour:
   speed: 6
   turnSmoothTime: 0.1
   jumpHeight: 3
+--- !u!65 &2553491416279969823
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411318141451944708}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2.2, z: 1}
+  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!1 &2861692851589932458
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,8 +419,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2914493054854867153}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.14150469, y: -0.7790329, z: 0.18533592, w: 0.5820093}
-  m_LocalPosition: {x: 4.7816925, y: 2.5233636, z: 1.4205809}
+  m_LocalRotation: {x: 0.07606264, y: -0.6803899, z: 0.06804747, w: 0.72570914}
+  m_LocalPosition: {x: 9.970102, y: 2.046794, z: -0.63849735}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -470,14 +492,14 @@ MonoBehaviour:
   Radius: 10
   Orbits:
     Top:
-      Radius: 4
+      Radius: 6
       Height: 6
     Center:
-      Radius: 5
-      Height: 2.5
+      Radius: 10
+      Height: 2
     Bottom:
-      Radius: 5
-      Height: 1
+      Radius: 6
+      Height: 0.5
     SplineCurvature: 0.5
   RecenteringTarget: 2
   HorizontalAxis:
@@ -633,7 +655,7 @@ MonoBehaviour:
   TransparentLayers:
     serializedVersion: 2
     m_Bits: 0
-  MinimumDistanceFromTarget: 0.3
+  MinimumDistanceFromTarget: 1
   AvoidObstacles:
     Enabled: 1
     DistanceLimit: 0
