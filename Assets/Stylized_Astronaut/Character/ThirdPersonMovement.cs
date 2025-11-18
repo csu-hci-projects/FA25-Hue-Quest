@@ -11,7 +11,7 @@ public class ThirdPersonMovement : MonoBehaviour
     private float verticalVelocity;
     private float groundedTimer;
     public float jumpHeight = 1.0f;
-    private float gravity = 9.81f;
+    [SerializeField] private float gravity = 9.81f;
     private Animator anim;
     private ColorManager colorManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

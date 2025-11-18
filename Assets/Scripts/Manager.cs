@@ -5,7 +5,9 @@ public class Manager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     IPlanet currentPlanet;
-    [SerializeField] Player player;
+    [SerializeField] PlanetGravity player;
+    [SerializeField] HubCamera playerCam;
+    [SerializeField] GameObject menu;
 
     void Start()
     {
@@ -31,7 +33,8 @@ public class Manager : MonoBehaviour
     public void Startgame()
     {
         Debug.Log("Start Button Pressed");
-        player.Activate();
+        playerCam.Activate();
+        menu.SetActive(false);
     }
 
     public void Quitgame()
