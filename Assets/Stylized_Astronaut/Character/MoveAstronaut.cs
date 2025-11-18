@@ -85,7 +85,7 @@ public class MoveAstronaut : MonoBehaviour
         // allow jump as long as the player is on the ground
         if (Input.GetButtonDown("Jump"))
         {
-            // must have been grounded recently to allow jump
+            // must have been grounded recently to allow jump (and has red color)
             if (groundedTimer > 0 && (colorManager.hasRed == true))
             {
                 // no more until we recontact ground
