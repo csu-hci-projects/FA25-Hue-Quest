@@ -319,7 +319,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c7525d35c38c2f44bdcd7d353d7eb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorManager
+  hasBlue: 0
   hasRed: 0
+  hasGreen: 0
+  hasOrnge: 0
+  hasYellow: 0
+  hasPurpule: 0
 --- !u!114 &7478568292052052853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,6 +341,7 @@ MonoBehaviour:
   speed: 6
   turnSmoothTime: 0.1
   jumpHeight: 3
+  gravity: 9.81
 --- !u!65 &2553491416279969823
 BoxCollider:
   m_ObjectHideFlags: 0
