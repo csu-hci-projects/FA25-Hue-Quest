@@ -14,12 +14,27 @@ public class ThirdPersonMovement : MonoBehaviour
     [SerializeField] private float gravity = 9.81f;
     private Animator anim;
     private ColorManager colorManager;
+
+    // DASH
+    public float dashSpeed = 10f;       // speed of dash
+    public float dashDuration = 0.2f;   // how long dash lasts
+    public float dashCooldown = 1f;     // cooldown between dashes
+
+    private bool isDashing = false;
+    private float dashTimer = 0f;
+    private float dashCooldownTimer = 0f;
+    private Vector3 dashDirection;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         controller = GetComponent<CharacterController>();
         anim = gameObject.GetComponentInChildren<Animator>();
         colorManager = GetComponent<ColorManager>();
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -77,23 +92,53 @@ public class ThirdPersonMovement : MonoBehaviour
             }
         }
 
+
+
         //declar mofeDir
         Vector3 moveDir = Vector3.zero;
 
-
+        // DASH INPUT
+        // DASH INPUT
         if (direction.magnitude >= 0.1f)
         {
-            //rotation angle
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
-            //movement 
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
         }
+
+        // ---- DASH INPUT ----
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownTimer <= 0f && !isDashing && colorManager.hasOrange == true)
+        {
+            if (moveDir.magnitude >= 0.1f)
+                dashDirection = moveDir.normalized;   // dash in actual movement direction
+            else
+                dashDirection = transform.forward;    // dash forward if standing still
+
+            isDashing = true;
+            dashTimer = dashDuration;
+            dashCooldownTimer = dashCooldown;
+        }
+
+        // ---- DASH ACTIVE ----
+        if (isDashing)
+        {
+            controller.Move(dashDirection * dashSpeed * Time.deltaTime);
+
+            dashTimer -= Time.deltaTime;
+            if (dashTimer <= 0f)
+                isDashing = false;
+
+            return; // skip normal movement & gravity while dashing
+        }
+
+        // ---- DASH COOLDOWN ----
+        if (dashCooldownTimer > 0f)
+            dashCooldownTimer -= Time.deltaTime;
         //movement 
         //Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 
-            //add jumping
+        //add jumping
         Vector3 move = (moveDir * speed) + Vector3.up * verticalVelocity;
         controller.Move(move * Time.deltaTime);
 
