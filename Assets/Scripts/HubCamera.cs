@@ -5,6 +5,7 @@ public class HubCamera : MonoBehaviour
 {
      [SerializeField] GameObject playerCamera;
     [SerializeField] GameObject planetCamera;
+    [SerializeField] GameObject menu;
 
     bool planetCameraActive;
     float flipPosition = 22.4f;
@@ -28,11 +29,13 @@ public class HubCamera : MonoBehaviour
       public void Activate()
     {
         playerCamera.SetActive(true);
+        menu.SetActive(false);
     }
     public void Deactivate()
     {
         playerCamera.SetActive(false);
         planetCamera.SetActive(false);
+        menu.SetActive(true);
     }
 
     void switchCamera()
@@ -40,10 +43,12 @@ public class HubCamera : MonoBehaviour
         if (transform.position.z > -12)
         {
             planetCamera.GetComponent<CinemachineOrbitalFollow>().TargetOffset.Set(0, 0, flipPosition);
+           // playerCamera.GetComponent<CinemachineOrbitalFollow>().TargetOffset.Set(0, 0, 10f);
         }
         else
         {
             planetCamera.GetComponent<CinemachineOrbitalFollow>().TargetOffset.Set(0, 0, 0);
+            //playerCamera.GetComponent<CinemachineOrbitalFollow>().TargetOffset.Set(0, 0, 0);
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
