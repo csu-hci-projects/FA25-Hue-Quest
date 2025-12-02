@@ -4,6 +4,9 @@ public class RedTrigger : MonoBehaviour
 {
     public Material redMat;
     public Material brownMat;
+    public Material caveMat;
+
+    public GameObject lavaPlane;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,6 +31,9 @@ public class RedTrigger : MonoBehaviour
             Debug.Log("Adding colors...");
             AddRedToLvl();
             Debug.Log("Colors should be added.");
+
+            Debug.Log("Starting lava rise...");
+            LavaRise();
         }
         gameObject.SetActive(false);
     }
@@ -37,6 +43,7 @@ public class RedTrigger : MonoBehaviour
 
         GameObject[] redObjects = GameObject.FindGameObjectsWithTag("IsRed");
         GameObject[] brownObjects = GameObject.FindGameObjectsWithTag("IsBrown");
+        GameObject[] caveObjects = GameObject.FindGameObjectsWithTag("IsCaveTexture");
         if (redObjects.Length > 0)
         {
             Debug.Log("red objects found");
@@ -55,6 +62,27 @@ public class RedTrigger : MonoBehaviour
             }
             Debug.Log("all brown objs found should now be brown.");
         }
+        if (caveObjects.Length > 0)
+        {
+            Debug.Log("cavetexture objs found");
+            foreach (GameObject caveobj in caveObjects)
+            {
+                caveobj.GetComponent<MeshRenderer>().material = caveMat;
+            }
+            Debug.Log("all cavetexture objs found should now be cavey.");
+        }
         return;
+    }
+
+    void LavaRise()
+    {
+        if (lavaPlane != null)
+        {
+            LavaController lavaController = lavaPlane.GetComponent<LavaController>();
+            if (lavaController != null)
+            {
+                lavaController.startRising();
+            }
+        }
     }
 }

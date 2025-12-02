@@ -6,6 +6,7 @@ TagManager:
   tags:
   - IsRed
   - IsBrown
+  - IsCaveTexture
   layers:
   - Default
   - TransparentFX
