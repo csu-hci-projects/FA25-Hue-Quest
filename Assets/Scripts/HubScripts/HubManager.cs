@@ -8,6 +8,9 @@ public class Manager : MonoBehaviour
     [SerializeField] PlanetGravity player;
     [SerializeField] HubCamera playerCam;
 
+    [SerializeField] AudioManager audioManager;
+    [SerializeField] AudioClip song;
+
     void Start()
     {
         IPlanet[] allObjectsWithInterface = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<IPlanet>().ToArray();
@@ -18,6 +21,7 @@ public class Manager : MonoBehaviour
             Debug.Log("Set planet " + currentPlanet + " as current planet");
         }
         player.setGravityTarget(currentPlanet);
+        audioManager.PlaySong(song, 20);
     }
 
     void Update()
@@ -32,17 +36,21 @@ public class Manager : MonoBehaviour
     public void Startgame()
     {
         Debug.Log("Start Button Pressed");
+        audioManager.PlaySelect();
         playerCam.Activate();
     }
 
     public void Quitgame()
     {
         Debug.Log("Exit Button Pressed");
+        audioManager.PlaySelect();
         Application.Quit();
     }
     
     public void Settings()
     {
+        audioManager.PlaySelect();
+        audioManager.toggleMenu(true);
         Debug.Log("Settings Button Pressed");
     }
 
