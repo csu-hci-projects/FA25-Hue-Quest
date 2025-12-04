@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class AstronautControl : MonoBehaviour
 {
+    [SerializeField] public bool hasRed = false;
+    [SerializeField] public bool hasOrange = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -11,6 +14,6 @@ public class AstronautControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
