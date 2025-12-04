@@ -26,6 +26,7 @@ public class ThirdPersonMovement : MonoBehaviour
     private Vector3 dashDirection;
 
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -118,6 +119,9 @@ public class ThirdPersonMovement : MonoBehaviour
             isDashing = true;
             dashTimer = dashDuration;
             dashCooldownTimer = dashCooldown;
+
+            anim.SetTrigger("DashFlip");
+
         }
 
         // ---- DASH ACTIVE ----
@@ -137,6 +141,9 @@ public class ThirdPersonMovement : MonoBehaviour
             dashCooldownTimer -= Time.deltaTime;
         //movement 
         //Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+
+
+
 
         //add jumping
         Vector3 move = (moveDir * speed) + Vector3.up * verticalVelocity;
