@@ -3,6 +3,7 @@ using UnityEngine;
 
 	public class TempMovement : MonoBehaviour {
 
+		[SerializeField] AudioManager audioManager;
 		private Animator anim;
 		public float speed = 6f;
 		public float turnSpeed = 400.0f;
@@ -23,6 +24,7 @@ using UnityEngine;
 			if (Input.GetKey("w"))
 			{
 				anim.SetInteger("AnimationPar", 1);
+				audioManager.Playwalk();
 			}
 			else
 			{
