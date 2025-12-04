@@ -25,6 +25,12 @@ public class ThirdPersonMovement : MonoBehaviour
     private float dashCooldownTimer = 0f;
     private Vector3 dashDirection;
 
+    // WALL STICK
+    public float wallStickTime = 2.0f;  // how long can stick to wall
+    private bool isStuckToWall = false;
+    private float wallStickTimer = 0f;
+    private Vector3 wallNormal;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -42,6 +48,11 @@ public class ThirdPersonMovement : MonoBehaviour
     void Update()
     {
         bool groundedPlayer = controller.isGrounded;
+        
+        //movement - declare early for use throughout method
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        
         //animation control
         if (Input.GetAxis("Horizontal") != 0.0f || Input.GetAxis("Vertical") != 0.0f)
         {
@@ -57,6 +68,7 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             // cooldown interval to allow reliable jumping even whem coming down ramps
             groundedTimer = 0.2f;
+            isStuckToWall = false; // reset wall stick when grounded
         }
         if (groundedTimer > 0)
         {
@@ -70,12 +82,64 @@ public class ThirdPersonMovement : MonoBehaviour
             verticalVelocity = -0f;
         }
 
+        // WALL STICK - check if touching wall and holding J
+        RaycastHit hit;
+        bool isTouchingWall = Physics.Raycast(transform.position, transform.forward, out hit, 1f);
+        
+        if (isTouchingWall && Input.GetKey(KeyCode.J) && colorManager.hasYellow && !groundedPlayer)
+        {
+            if (!isStuckToWall)
+            {
+                // Just stuck to wall
+                isStuckToWall = true;
+                wallStickTimer = wallStickTime;
+                wallNormal = hit.normal;
+                verticalVelocity = 0; // stop falling
+            }
+        }
+        else if (isStuckToWall && !Input.GetKey(KeyCode.J))
+        {
+            // Released J key, fall off
+            isStuckToWall = false;
+        }
+
+        // STUCK TO WALL - freeze in place, count down timer
+        if (isStuckToWall)
+        {
+            wallStickTimer -= Time.deltaTime;
+            
+            // Timer ran out, fall off wall
+            if (wallStickTimer <= 0f)
+            {
+                isStuckToWall = false;
+                // Don't reset verticalVelocity here so they start falling
+            }
+            
+            if (isStuckToWall)
+            {
+                // Stay stuck - no gravity, no movement
+                verticalVelocity = 0;
+                
+                // Can jump off wall
+                if (Input.GetButtonDown("Jump"))
+                {
+                    isStuckToWall = false;
+                    wallStickTimer = 0f;
+                    
+                    // Jump away from wall
+                    verticalVelocity = Mathf.Sqrt(jumpHeight * 2 * gravity);
+                    Vector3 awayFromWall = wallNormal * speed * 0.5f;
+                    controller.Move(awayFromWall * Time.deltaTime * 10f); // push away from wall
+                }
+                
+                return; // skip normal movement while stuck
+            }
+        }
+
         // apply gravity always, to let us track down ramps properly
         verticalVelocity -= gravity * Time.deltaTime;
 
         //movement
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
 
