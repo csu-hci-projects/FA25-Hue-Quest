@@ -6,6 +6,8 @@ public class RedTrigger : MonoBehaviour
     public Material brownMat;
     public Material caveMat;
 
+    public GameObject script;
+
     public GameObject lavaPlane;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,6 +33,11 @@ public class RedTrigger : MonoBehaviour
             Debug.Log("Adding colors...");
             AddRedToLvl();
             Debug.Log("Colors should be added.");
+
+            if (script != null)
+            {
+                script.SetActive(true);
+            }
 
             Debug.Log("Starting lava rise...");
             LavaRise();
