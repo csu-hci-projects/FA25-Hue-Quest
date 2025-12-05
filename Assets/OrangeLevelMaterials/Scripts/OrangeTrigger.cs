@@ -3,53 +3,47 @@ using System.Collections;
 
 public class OrangeTrigger : MonoBehaviour
 {
-
-    public Material desertSandMaterial; // Orange-ish color
+    public Material desertSandMaterial;
     public Terrain terrain;
-
     public GameObject dashMessageUI;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    private bool triggered = false; // ensures it only triggers once
 
     private void OnTriggerEnter(Collider other)
     {
+        if (triggered) return; // prevent multiple triggers
+
         if (other.CompareTag("Player"))
         {
+            triggered = true;
+
+            // Disable collider so it can't trigger again
+            Collider col = GetComponent<Collider>();
+            if (col != null) col.enabled = false;
+
+            // Give player the orange power
             ColorManager playerColorManager = other.gameObject.GetComponent<ColorManager>();
-            playerColorManager.hasOrange = true;
+            if (playerColorManager != null)
+                playerColorManager.hasOrange = true;
 
             // Change terrain color
-            if (terrain != null)
+            if (terrain != null && desertSandMaterial != null)
                 terrain.materialTemplate = desertSandMaterial;
 
+            // Show dash message UI
             if (dashMessageUI != null)
                 StartCoroutine(ShowDashMessageAndDestroy());
-
-
-            // Destroy the sphere after a tiny delay (or just deactivate it)
-            // delay 0.1 sec ensures coroutine starts
         }
     }
 
     private IEnumerator ShowDashMessageAndDestroy()
     {
-        if (dashMessageUI != null)
-            dashMessageUI.SetActive(true);
+        dashMessageUI.SetActive(true);
 
         yield return new WaitForSeconds(3f);
 
-        if (dashMessageUI != null)
-            dashMessageUI.SetActive(false);
+        dashMessageUI.SetActive(false);
 
-        Destroy(gameObject); // destroy sphere after message disappears
+        Destroy(gameObject);
     }
 }
