@@ -206,7 +206,10 @@ public class ThirdPersonMovement : MonoBehaviour
         //movement 
         //Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 
-
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            anim.SetTrigger("Woah");
+        }
 
 
         //add jumping
