@@ -525,6 +525,24 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 289301614986012343, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
+--- !u!1 &248575563 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2614200769521716864, guid: a1f089d0c73b18249b8250d056f343a8, type: 3}
+  m_PrefabInstance: {fileID: 1290356822}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &248575569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248575563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f19a4e24e5bcf4bb6f0629a6955702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonSceneTrigger
+  sceneName: GreenLevel
 --- !u!4 &249460583 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5349852693093732822, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
@@ -985,6 +1003,56 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1f089d0c73b18249b8250d056f343a8, type: 3}
+--- !u!1 &637749709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 637749711}
+  - component: {fileID: 637749710}
+  m_Layer: 0
+  m_Name: MainManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &637749710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637749709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 135acbe4fafdda34d8eedb2fcbadfb8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainManager
+  hasBlue: 0
+  hasRed: 0
+  hasGreen: 0
+  hasYellow: 0
+  hasPurpule: 0
+  hasOrange: 0
+--- !u!4 &637749711
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637749709}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.24353, y: 8.35532, z: -13.7103}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &772255437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,7 +1872,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2614200769521716864, guid: a1f089d0c73b18249b8250d056f343a8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 248575569}
   m_SourcePrefab: {fileID: 100100000, guid: a1f089d0c73b18249b8250d056f343a8, type: 3}
 --- !u!1 &1317594114
 GameObject:
@@ -1948,7 +2019,7 @@ MonoBehaviour:
     m_Bits: 0
   MinimumDistanceFromTarget: 1
   AvoidObstacles:
-    Enabled: 1
+    Enabled: 0
     DistanceLimit: 0
     MinimumOcclusionTime: 0
     CameraRadius: 0.4
@@ -3065,4 +3136,4 @@ SceneRoots:
   - {fileID: 944928083}
   - {fileID: 1290356822}
   - {fileID: 1563936170}
-  - {fileID: 1022530182}
+  - {fileID: 637749711}

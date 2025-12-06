@@ -26,6 +26,11 @@ public class OrangeTrigger : MonoBehaviour
             if (playerColorManager != null)
                 playerColorManager.hasOrange = true;
 
+            if (MainManager.instance != null)
+            {
+                MainManager.instance.hasOrange = true;
+            }
+
             // Change terrain color
             if (terrain != null && desertSandMaterial != null)
                 terrain.materialTemplate = desertSandMaterial;

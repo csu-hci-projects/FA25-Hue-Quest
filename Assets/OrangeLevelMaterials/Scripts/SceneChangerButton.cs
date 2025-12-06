@@ -9,6 +9,7 @@ public class ButtonSceneTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("loading scene: " + sceneName);
             SceneManager.LoadScene(sceneName);
         }
     }
