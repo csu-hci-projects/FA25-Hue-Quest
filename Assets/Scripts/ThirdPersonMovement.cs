@@ -31,6 +31,9 @@ public class ThirdPersonMovement : MonoBehaviour
     private float wallStickTimer = 0f;
     private Vector3 wallNormal;
 
+    //adding audio manager for walk/jump sounds?
+    [SerializeField] AudioManager audioManager;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -57,6 +60,11 @@ public class ThirdPersonMovement : MonoBehaviour
         if (Input.GetAxis("Horizontal") != 0.0f || Input.GetAxis("Vertical") != 0.0f)
         {
             anim.SetInteger("AnimationPar", 1);
+            //music?
+            if (audioManager != null)
+            {
+                audioManager.Playwalk();
+            }
         }
         else
         {
@@ -85,6 +93,12 @@ public class ThirdPersonMovement : MonoBehaviour
         // WALL STICK - check if touching wall and holding J
         RaycastHit hit;
         bool isTouchingWall = Physics.Raycast(transform.position, transform.forward, out hit, 1f);
+
+        // Don't stick to lasers
+        if (isTouchingWall && hit.collider.GetComponent<LaserHazard>() != null)
+        {
+            isTouchingWall = false;
+        }
         
         if (isTouchingWall && Input.GetKey(KeyCode.J) && colorManager.hasYellow && !groundedPlayer)
         {
@@ -154,6 +168,12 @@ public class ThirdPersonMovement : MonoBehaviour
 
                 // Physics dynamics formula for calculating jump up velocity based on height and gravity
                 verticalVelocity += Mathf.Sqrt(jumpHeight * 2 * gravity);
+
+                //call jump music?
+                if (audioManager != null)
+                {
+                    audioManager.Playjump();
+                }
             }
         }
 

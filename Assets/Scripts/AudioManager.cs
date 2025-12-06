@@ -13,11 +13,14 @@ public class AudioManager : MonoBehaviour
     public AudioClip jump;
     public AudioClip select;
     public AudioClip walk;
+    public AudioClip death;
+    public AudioClip BGM;
 
     void Start()
     {
         musicSource.volume = 0.5f;
         SFXSource.volume = 0.3f;
+        PlaySong(BGM, 0);
     }
 
     void Update()
@@ -42,9 +45,12 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySong(AudioClip song, int statTime)
     {
-        musicSource.clip = song;
-        musicSource.time = statTime;
-        musicSource.Play();
+        if (song != null)
+        {
+            musicSource.clip = song;
+            musicSource.time = statTime;
+            musicSource.Play();
+        }
     }
     
     public void Playjump()
@@ -61,9 +67,14 @@ public class AudioManager : MonoBehaviour
     {
         if (!SFXSource.isPlaying)
         {
-          SFXSource.PlayOneShot(walk);  
+            SFXSource.PlayOneShot(walk);
         }
-        
+
+    }
+    
+    public void Playdeath()
+    {
+        SFXSource.PlayOneShot(death);
     }
     public void PlaySFX(AudioClip clip){
         SFXSource.PlayOneShot(clip);
