@@ -39,6 +39,10 @@ public class GreenTrigger : MonoBehaviour
         {
             Debug.Log("Player has picked up green paint");
             player.hasGreen = true;
+            if (MainManager.instance != null)
+            {
+                MainManager.instance.hasGreen = true;
+            }
             audioManager.PlaySong(greenSong,0);
             terrain.treeBillboardDistance = 400;
             Debug.Log("Player should now have green and can climb.");

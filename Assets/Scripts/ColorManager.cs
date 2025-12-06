@@ -13,12 +13,16 @@ public class ColorManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        hasBlue = MainManager.instance.hasBlue;
-        hasRed = MainManager.instance.hasRed;
-        hasGreen = MainManager.instance.hasGreen;
-        hasYellow = MainManager.instance.hasYellow;
-        hasPurpule = MainManager.instance.hasPurpule;
-        hasOrange = MainManager.instance.hasOrange;
+        if (MainManager.instance != null)
+        {
+           hasBlue = MainManager.instance.hasBlue;
+           hasRed = MainManager.instance.hasRed;
+           hasGreen = MainManager.instance.hasGreen;
+           hasYellow = MainManager.instance.hasYellow;
+           hasPurpule = MainManager.instance.hasPurpule;
+           hasOrange = MainManager.instance.hasOrange; 
+        }
+        
     }
 
     // Update is called once per frame

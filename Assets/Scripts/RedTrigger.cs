@@ -27,6 +27,10 @@ public class RedTrigger : MonoBehaviour
             Debug.Log("Player has picked up red paint");
             ColorManager playerColorManager = other.gameObject.GetComponent<ColorManager>();
             playerColorManager.hasRed = true;
+            if (MainManager.instance != null)
+            {
+                MainManager.instance.hasRed = true;
+            }
             Debug.Log("Player should now have red and can jump.");
             Debug.Log("Adding colors...");
             AddRedToLvl();
