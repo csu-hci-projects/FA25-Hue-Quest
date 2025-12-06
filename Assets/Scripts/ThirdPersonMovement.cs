@@ -57,10 +57,10 @@ public class ThirdPersonMovement : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
         
         //animation control
-        if (Input.GetAxis("Horizontal") != 0.0f || Input.GetAxis("Vertical") != 0.0f)
+        if (horizontal != 0.0f || vertical != 0.0f)
         {
             anim.SetInteger("AnimationPar", 1);
-            //music?
+            //SFX walking sound
             if (audioManager != null)
             {
                 audioManager.Playwalk();
