@@ -93,6 +93,12 @@ public class ThirdPersonMovement : MonoBehaviour
         // WALL STICK - check if touching wall and holding J
         RaycastHit hit;
         bool isTouchingWall = Physics.Raycast(transform.position, transform.forward, out hit, 1f);
+
+        // Don't stick to lasers
+        if (isTouchingWall && hit.collider.GetComponent<LaserHazard>() != null)
+        {
+            isTouchingWall = false;
+        }
         
         if (isTouchingWall && Input.GetKey(KeyCode.J) && colorManager.hasYellow && !groundedPlayer)
         {
