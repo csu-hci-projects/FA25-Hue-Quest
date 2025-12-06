@@ -5,7 +5,6 @@ public class Button : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] int pressedDistance = 5;
     [SerializeField] float speed = 12.0f;
-    IActivatable activatableObject;
     Vector3 pressedVector;
     void Start()
     {
@@ -21,7 +20,7 @@ public class Button : MonoBehaviour
     {
         Debug.Log("Hit Button");
         transform.position = Vector3.MoveTowards(transform.position, transform.position - pressedVector, speed * Time.deltaTime);
-        activatableObject.activate();
+        
     }
     void OnTriggerExit(Collider other)
     {

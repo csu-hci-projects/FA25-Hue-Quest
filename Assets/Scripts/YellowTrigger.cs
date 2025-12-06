@@ -11,6 +11,10 @@ public class YellowTrigger : MonoBehaviour
         {
             Debug.Log("Player has picked up yellow paint");
             player.hasYellow = true;
+            if (MainManager.instance != null)
+            {
+                MainManager.instance.hasYellow = true;
+            }
             Debug.Log("Player should now have yellow and can climb walls.");
         }
         gameObject.SetActive(false);

@@ -208,7 +208,7 @@ Transform:
   m_GameObject: {fileID: 4869727490592800637}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.16353978, y: -0.44747922, z: -53.873154}
+  m_LocalPosition: {x: 0.16354007, y: -0.71999896, z: -29.474785}
   m_LocalScale: {x: 14.285714, y: 14.285714, z: 14.285714}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -361,7 +361,7 @@ Transform:
   m_GameObject: {fileID: 6659849015873670758}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.16354004, y: 0.21333058, z: -3.3344378}
+  m_LocalPosition: {x: 0.16354007, y: 0.51684123, z: -5.264264}
   m_LocalScale: {x: 4.810004, y: 4.810004, z: 4.8100047}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -468,7 +468,7 @@ GameObject:
   - component: {fileID: 6128453717015550692}
   m_Layer: 0
   m_Name: Planet_Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -623,6 +623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HubCamera
   playerCamera: {fileID: 6659849015873670758}
   planetCamera: {fileID: 4869727490592800637}
+  menu: {fileID: 0}
 --- !u!95 &6348088800033300624
 Animator:
   serializedVersion: 7
@@ -657,6 +658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c7b5abfedd4e741bef70712caf60fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
   speed: 5
   turnSpeed: 300
   gravity: 0
