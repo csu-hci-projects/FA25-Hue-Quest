@@ -43,6 +43,7 @@ public class ReturnToHubButton : MonoBehaviour
                 }
             }
 
+            player.GetComponent<HubCamera>().Activate();
             if (cc) cc.enabled = true;
         }
     }
