@@ -11,8 +11,8 @@ public class BeeSwarm : MonoBehaviour
     public float moveSpeed = 2f;           // how fast bees fly
     public float rotationSpeed = 2f;       // how smoothly they turn
     public float changeDirectionTime = 3f; // how often they pick new direction
-    public float minHeight = 5f;           // minimum flying height
-    public float maxHeight = 15f;          // maximum flying height
+    public float minHeight = 1f;           // minimum flying height
+    public float maxHeight = 10f;          // maximum flying height
     public float wanderRadius = 20f;       // how far they wander from spawn point
     
     private GameObject[] bees;
@@ -40,15 +40,33 @@ public class BeeSwarm : MonoBehaviour
             bees[i] = Instantiate(beePrefab, randomPos, Random.rotation);
             bees[i].transform.parent = transform;
             
-            // Disable any physics components on the bee prefab
+            // Add Rigidbody for physics
             Rigidbody rb = bees[i].GetComponent<Rigidbody>();
-            if (rb != null)
+            if (rb == null)
             {
-                Destroy(rb);
-                Debug.Log("Removed Rigidbody from bee " + i);
+                rb = bees[i].AddComponent<Rigidbody>();
+            }
+            rb.useGravity = false;  // bees fly, don't fall
+            rb.isKinematic = false;  // allow physics interactions
+            rb.mass = 0.5f;  // light weight
+            rb.linearDamping = 2f;  // air resistance
+            
+            // Make sure bee has a collider
+            Collider col = bees[i].GetComponent<Collider>();
+            if (col == null)
+            {
+                // Add a sphere collider if none exists
+                SphereCollider sphereCol = bees[i].AddComponent<SphereCollider>();
+                sphereCol.radius = 0.5f;  // adjust size as needed
             }
             
-            spawnCenters[i] = randomPos; // remember spawn position
+            // Add push script
+            if (bees[i].GetComponent<BeePush>() == null)
+            {
+                bees[i].AddComponent<BeePush>();
+            }
+            
+            spawnCenters[i] = randomPos;
             targetPositions[i] = GetRandomPositionNear(spawnCenters[i]);
             directionTimers[i] = Random.Range(0f, changeDirectionTime);
         }
@@ -70,27 +88,21 @@ public class BeeSwarm : MonoBehaviour
             {
                 targetPositions[i] = GetRandomPositionNear(spawnCenters[i]);
                 directionTimers[i] = changeDirectionTime + Random.Range(-1f, 1f);
-                
-                // Debug first bee
-                if (i == 0)
-                {
-                    Debug.Log("Bee 0 new target: " + targetPositions[i] + " | Current pos: " + bees[i].transform.position);
-                }
             }
             
-            // Force clamp bee position to stay within bounds
-            Vector3 currentPos = bees[i].transform.position;
-            currentPos.y = Mathf.Clamp(currentPos.y, minHeight, maxHeight);
-            bees[i].transform.position = currentPos;
-            
-            // Move toward target position
-            Vector3 direction = (targetPositions[i] - bees[i].transform.position).normalized;
-            bees[i].transform.position += direction * moveSpeed * Time.deltaTime;
+            // Move toward target position using Rigidbody
+            Rigidbody rb = bees[i].GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                Vector3 direction = (targetPositions[i] - bees[i].transform.position).normalized;
+                rb.linearVelocity = direction * moveSpeed;
+            }
             
             // Rotate to face movement direction
-            if (direction != Vector3.zero)
+            Vector3 moveDir = (targetPositions[i] - bees[i].transform.position).normalized;
+            if (moveDir != Vector3.zero)
             {
-                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                Quaternion targetRotation = Quaternion.LookRotation(moveDir);
                 bees[i].transform.rotation = Quaternion.Slerp(bees[i].transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             }
             

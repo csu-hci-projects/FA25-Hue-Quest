@@ -1,9 +1,10 @@
 using UnityEngine;
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 
 public class HubCamera : MonoBehaviour
 {
-     [SerializeField] GameObject playerCamera;
+    [SerializeField] GameObject playerCamera;
     [SerializeField] GameObject planetCamera;
     [SerializeField] GameObject menu;
 
@@ -30,12 +31,18 @@ public class HubCamera : MonoBehaviour
     {
         playerCamera.SetActive(true);
         menu.SetActive(false);
+        //lock mouse?
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     public void Deactivate()
     {
         playerCamera.SetActive(false);
         planetCamera.SetActive(false);
         menu.SetActive(true);
+        //unlock mouse?
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     void switchCamera()

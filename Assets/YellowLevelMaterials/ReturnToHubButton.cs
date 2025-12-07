@@ -5,11 +5,24 @@ public class ReturnToHubButton : MonoBehaviour
 {
     [SerializeField] string hubSceneName = "HubWorld";
 
+    //adding UnlockLevelColor functionality
+    [SerializeField] bool IsLevelEnd = false;
+    public string colorKey;
+    public string fadeKey;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             Debug.Log("Returning to hub...");
+
+            //UnlockLevelColor function
+            if (IsLevelEnd)
+            {
+                PlayerPrefs.SetInt(colorKey, 1);
+                PlayerPrefs.SetInt(fadeKey, 1);
+                PlayerPrefs.Save();
+            }
 
             SceneManager.sceneLoaded += OnHubLoaded;
             SceneManager.LoadScene(hubSceneName);
@@ -42,6 +55,10 @@ public class ReturnToHubButton : MonoBehaviour
                     player.transform.rotation = spawn.rotation;
                 }
             }
+            //disable starting screen?
+            HubCamera playercam = player.GetComponent<HubCamera>();
+            playercam.Activate();
+            //end
 
             player.GetComponent<HubCamera>().Activate();
             if (cc) cc.enabled = true;
