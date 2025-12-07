@@ -3,7 +3,7 @@ using Unity.Cinemachine;
 
 public class HubCamera : MonoBehaviour
 {
-     [SerializeField] GameObject playerCamera;
+    [SerializeField] GameObject playerCamera;
     [SerializeField] GameObject planetCamera;
     [SerializeField] GameObject menu;
 
