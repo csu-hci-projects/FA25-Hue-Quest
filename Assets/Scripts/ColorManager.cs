@@ -30,4 +30,13 @@ public class ColorManager : MonoBehaviour
     {
 
     }
+
+    public void resetAll()
+    {
+        hasBlue = false;
+        hasRed = false;
+        hasGreen = false;
+        hasOrange = false;
+        hasYellow = false;
+    }
 }

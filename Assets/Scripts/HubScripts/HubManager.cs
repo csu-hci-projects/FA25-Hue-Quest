@@ -46,12 +46,24 @@ public class Manager : MonoBehaviour
         audioManager.PlaySelect();
         Application.Quit();
     }
-    
+
     public void Settings()
     {
         audioManager.PlaySelect();
         audioManager.toggleMenu(true);
         Debug.Log("Settings Button Pressed");
+    }
+    
+    //add PlayerPrefs reset?
+    public void ResetGame()
+    {
+        //reset colors
+        MainManager mainManager = GameObject.FindAnyObjectByType<MainManager>();
+        ColorManager colorManager = GameObject.FindAnyObjectByType<ColorManager>();
+        mainManager.resetAll();
+        colorManager.resetAll();
+        //reset playerprefs
+        PlayerPrefs.DeleteAll();
     }
 
 }

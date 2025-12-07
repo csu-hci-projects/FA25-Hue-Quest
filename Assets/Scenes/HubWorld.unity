@@ -543,7 +543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HubWorldColorManager
   hubRenderer: {fileID: 198866845}
-  materialIndex: 5
+  materialIndex: 2
   unlockedColor: {r: 0.9811321, g: 0.8886522, b: 0.0509078, a: 0}
   fadeDuration: 10
   unlockKey: YellowUnlocked

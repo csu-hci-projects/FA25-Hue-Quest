@@ -19,4 +19,13 @@ public class MainManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
     }
+
+    public void resetAll()
+    {
+        hasBlue = false;
+        hasRed = false;
+        hasGreen = false;
+        hasOrange = false;
+        hasYellow = false;
+    }
 }
