@@ -1496,7 +1496,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8283540354502213020, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1298076029}
+      addedObject: {fileID: 1298076024}
   m_SourcePrefab: {fileID: 100100000, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
 --- !u!1001 &493641604
 PrefabInstance:
@@ -4601,7 +4601,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8283540354502213020, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
   m_PrefabInstance: {fileID: 461186683}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1298076029
+--- !u!114 &1298076024
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4610,10 +4610,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1298076023}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03f19a4e24e5bcf4bb6f0629a6955702, type: 3}
+  m_Script: {fileID: 11500000, guid: 9cf368c468afa4db18dfef66083892c7, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonSceneTrigger
-  sceneName: HubWorld
+  m_EditorClassIdentifier: Assembly-CSharp::ReturnToHubButton
+  hubSceneName: HubWorld
+  IsLevelEnd: 1
+  colorKey: OrangeUnlock
+  fadeKey: OrangeFade
 --- !u!1001 &1301397368
 PrefabInstance:
   m_ObjectHideFlags: 0
