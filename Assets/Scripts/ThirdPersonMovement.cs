@@ -31,6 +31,9 @@ public class ThirdPersonMovement : MonoBehaviour
     private float wallStickTimer = 0f;
     private Vector3 wallNormal;
 
+    // FREEZE MOVEMENT
+    public bool isFrozen = false;
+
     //adding audio manager for walk/jump sounds?
     [SerializeField] AudioManager audioManager;
 
@@ -51,6 +54,15 @@ public class ThirdPersonMovement : MonoBehaviour
     void Update()
     {
         bool groundedPlayer = controller.isGrounded;
+
+            // If frozen, do nothing except apply gravity
+        if (isFrozen)
+        {
+            verticalVelocity -= gravity * Time.deltaTime;
+            Vector3 fallMove = Vector3.up * verticalVelocity;
+            controller.Move(fallMove * Time.deltaTime);
+            return;
+        }
         
         //movement - declare early for use throughout method
         float horizontal = Input.GetAxis("Horizontal");
