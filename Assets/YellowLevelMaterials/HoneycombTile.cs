@@ -4,8 +4,9 @@ public class HoneycombTile : MonoBehaviour
 {
     [Header("Tile Settings")]
     public bool isBreakable = true;
-    public float breakDelay = 0.5f;        // time before tile breaks after stepped on
+    public float breakDelay = 0.2f;        // reduced delay for faster breaking
     public float respawnTime = 5f;         // time before tile respawns (0 = never)
+    public float pullDownForce = 50f;      // how strong to pull player down
     
     [Header("Visual Feedback")]
     public Color normalColor = new Color(1f, 0.9f, 0.3f);      // yellow
@@ -18,6 +19,7 @@ public class HoneycombTile : MonoBehaviour
     private Vector3 originalPosition;
     private bool isTriggered = false;
     private bool isBroken = false;
+    private GameObject playerOnTile = null;
     
     void Start()
     {
@@ -38,6 +40,20 @@ public class HoneycombTile : MonoBehaviour
             meshRenderer.material.color = normalColor;
     }
     
+    void Update()
+    {
+        // If tile is breaking and player is on it, pull them down
+        if (isTriggered && playerOnTile != null)
+        {
+            CharacterController controller = playerOnTile.GetComponent<CharacterController>();
+            if (controller != null)
+            {
+                // Apply strong downward force
+                controller.Move(Vector3.down * pullDownForce * Time.deltaTime);
+            }
+        }
+    }
+    
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("Trigger entered by: " + other.gameObject.name + " with tag: " + other.tag);
@@ -47,6 +63,15 @@ public class HoneycombTile : MonoBehaviour
         {
             Debug.Log("Breaking tile!");
             isTriggered = true;
+            playerOnTile = other.gameObject;
+            
+            // Freeze player movement
+            ThirdPersonMovement movement = other.GetComponent<ThirdPersonMovement>();
+            if (movement != null)
+            {
+                movement.isFrozen = true;
+            }
+            
             StartCoroutine(BreakTile());
         }
     }
@@ -81,7 +106,7 @@ public class HoneycombTile : MonoBehaviour
     
     System.Collections.IEnumerator FallAndDisable()
     {
-        // Disable collision immediately
+        // Disable collision immediately so player falls through
         if (walkCollider != null)
             walkCollider.enabled = false;
         if (triggerCollider != null)
@@ -103,6 +128,7 @@ public class HoneycombTile : MonoBehaviour
         
         // Hide the tile
         gameObject.SetActive(false);
+        playerOnTile = null;
     }
     
     void RespawnTile()
@@ -122,5 +148,6 @@ public class HoneycombTile : MonoBehaviour
         
         isTriggered = false;
         isBroken = false;
+        playerOnTile = null;
     }
 }
