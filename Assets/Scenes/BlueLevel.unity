@@ -5446,13 +5446,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8849795792881851338, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
       propertyPath: m_Name
-      value: Button
+      value: ColorButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8849795792881851338, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 725411639}
   m_SourcePrefab: {fileID: 100100000, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
+--- !u!1 &725411638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8849795792881851338, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
+  m_PrefabInstance: {fileID: 725411637}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &725411639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725411638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2f55c8c9f90943e38054ec9c3ece03a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnlockLevelColor
+  hubScene: HubWorld
+  colorKey: Blueunlock
+  fadeKey: Blue
 --- !u!1 &876948349
 GameObject:
   m_ObjectHideFlags: 0

@@ -824,6 +824,7 @@ GameObject:
   - component: {fileID: 553346651}
   - component: {fileID: 553346650}
   - component: {fileID: 553346649}
+  - component: {fileID: 553346653}
   m_Layer: 0
   m_Name: VolcanoTopExit
   m_TagString: Untagged
@@ -924,6 +925,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &553346653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553346648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cf368c468afa4db18dfef66083892c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReturnToHubButton
+  hubSceneName: HubWorld
+  IsLevelEnd: 1
+  colorKey: RedUnlock
+  fadeKey: RedFade
 --- !u!1 &593080727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,6 +1634,7 @@ GameObject:
   - component: {fileID: 1032814739}
   - component: {fileID: 1032814738}
   - component: {fileID: 1032814737}
+  - component: {fileID: 1032814740}
   m_Layer: 0
   m_Name: BackEntrancePlane
   m_TagString: Untagged
@@ -1716,6 +1734,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032814735}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1032814740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032814735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cf368c468afa4db18dfef66083892c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReturnToHubButton
+  hubSceneName: HubWorld
+  IsLevelEnd: 0
+  colorKey: 
+  fadeKey: 
 --- !u!1001 &1055717196
 PrefabInstance:
   m_ObjectHideFlags: 0
