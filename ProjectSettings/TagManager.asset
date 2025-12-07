@@ -7,6 +7,8 @@ TagManager:
   - IsRed
   - IsBrown
   - IsCaveTexture
+  - IsPurple
+  - IsGrass
   layers:
   - Default
   - TransparentFX
