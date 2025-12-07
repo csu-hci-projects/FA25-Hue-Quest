@@ -543,11 +543,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HubWorldColorManager
   hubRenderer: {fileID: 198866845}
-  materialIndex: 2
+  materialIndex: 5
   unlockedColor: {r: 0.9811321, g: 0.8886522, b: 0.0509078, a: 0}
   fadeDuration: 10
   unlockKey: YellowUnlocked
   fadeKey: FadeYellowNextLoad
+--- !u!114 &198866849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198866839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e75f0074d40dc41e2b8bc0202d9cea03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColorTransition
+  hubRenderer: {fileID: 198866845}
+  materialIndex: 5
+  unlockedColor: {r: 1, g: 0.10980392, b: 0, a: 0}
+  fadeDuration: 10
+  unlockKey: RedUnlock
+  fadeKey: RedFade
 --- !u!1 &248575563 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2614200769521716864, guid: a1f089d0c73b18249b8250d056f343a8, type: 3}
@@ -1528,6 +1546,7 @@ GameObject:
   - component: {fileID: 868764712}
   - component: {fileID: 868764711}
   - component: {fileID: 868764710}
+  - component: {fileID: 868764713}
   m_Layer: 0
   m_Name: EndEntranceTrigger
   m_TagString: Untagged
@@ -1627,6 +1646,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 868764708}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &868764713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868764708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f19a4e24e5bcf4bb6f0629a6955702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonSceneTrigger
+  sceneName: EndLevel
+  backUpDistance: 2
 --- !u!1001 &905839243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3010,6 +3043,7 @@ GameObject:
   - component: {fileID: 1648301305}
   - component: {fileID: 1648301304}
   - component: {fileID: 1648301303}
+  - component: {fileID: 1648301306}
   m_Layer: 0
   m_Name: EntranceTrigger
   m_TagString: Untagged
@@ -3109,6 +3143,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648301301}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1648301306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648301301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f19a4e24e5bcf4bb6f0629a6955702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonSceneTrigger
+  sceneName: RedLevel
+  backUpDistance: 2
 --- !u!1 &1651991499 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8226489773976278502, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
@@ -3548,6 +3596,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -5117700066308340382, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 198866847}
+    - targetCorrespondingSourceObject: {fileID: -5117700066308340382, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 198866849}
     - targetCorrespondingSourceObject: {fileID: 117214286460000749, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 147933062}
@@ -3803,3 +3854,4 @@ SceneRoots:
   - {fileID: 1022530182}
   - {fileID: 290059169}
   - {fileID: 1767607010}
+  - {fileID: 1578642363}
