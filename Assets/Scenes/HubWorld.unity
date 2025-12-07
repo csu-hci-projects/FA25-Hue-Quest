@@ -525,6 +525,29 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 289301614986012343, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
+--- !u!23 &198866845 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -2571118854743697038, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
+  m_PrefabInstance: {fileID: 1890026081}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &198866847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198866839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e75f0074d40dc41e2b8bc0202d9cea03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HubWorldColorManager
+  hubRenderer: {fileID: 198866845}
+  materialIndex: 2
+  unlockedColor: {r: 0.9811321, g: 0.8886522, b: 0.0509078, a: 0}
+  fadeDuration: 10
+  unlockKey: YellowUnlocked
+  fadeKey: FadeYellowNextLoad
 --- !u!1 &248575563 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2614200769521716864, guid: a1f089d0c73b18249b8250d056f343a8, type: 3}
@@ -543,6 +566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonSceneTrigger
   sceneName: GreenLevel
+  backUpDistance: 2
 --- !u!4 &249460583 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5349852693093732822, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
@@ -641,6 +665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonSceneTrigger
   sceneName: YellowLevel
+  backUpDistance: 2
 --- !u!65 &290059172
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3030,6 +3055,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -5117700066308340382, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 198866843}
+    - targetCorrespondingSourceObject: {fileID: -5117700066308340382, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 198866847}
     - targetCorrespondingSourceObject: {fileID: 117214286460000749, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 147933062}
@@ -3131,15 +3159,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -85.26316
+      value: -85.26317
       objectReference: {fileID: 0}
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.31579
+      value: 16.315792
       objectReference: {fileID: 0}
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -359.36636
+      value: -359.3664
       objectReference: {fileID: 0}
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalRotation.w
