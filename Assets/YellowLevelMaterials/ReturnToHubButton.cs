@@ -60,6 +60,7 @@ public class ReturnToHubButton : MonoBehaviour
             playercam.Activate();
             //end
 
+            player.GetComponent<HubCamera>().Activate();
             if (cc) cc.enabled = true;
         }
     }
