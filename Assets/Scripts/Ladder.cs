@@ -18,9 +18,11 @@ public class Ladder : MonoBehaviour
                 Debug.Log("Moving Player up");
                 Vector3 move = new Vector3(0,10,0);
                 Transform playerPosition = other.gameObject.GetComponent<Transform>();
+                other.GetComponent<ThirdPersonMovement>().enabled = false;
                 other.GetComponent<CharacterController>().enabled = false;
                 playerPosition.Translate(move);
                 other.GetComponent<CharacterController>().enabled = true;
+                other.GetComponent<ThirdPersonMovement>().enabled = true;
             }
         }
     }
