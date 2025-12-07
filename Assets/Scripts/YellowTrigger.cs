@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
 
 public class YellowTrigger : MonoBehaviour
 {
     [SerializeField] ColorManager player;
     [SerializeField] Material skyboxMaterial;      // drag your skybox material here
     [SerializeField] Material honeycombGroundMaterial;  // drag honeycomb ground material here
+    [SerializeField] GameObject abilityMessageUI;  // drag your UI Text/Panel here
     
     private Color blackAndWhite = new Color(0.5f, 0.5f, 0.5f); // grayscale for skybox
     private Color towerBlackAndWhite = new Color(1f, 1f, 1f);  // pure white for tower
@@ -23,6 +26,12 @@ public class YellowTrigger : MonoBehaviour
         if (honeycombGroundMaterial != null)
         {
             honeycombGroundMaterial.color = towerBlackAndWhite;
+        }
+        
+        // Hide ability message at start
+        if (abilityMessageUI != null)
+        {
+            abilityMessageUI.SetActive(false);
         }
     }
 
@@ -50,8 +59,23 @@ public class YellowTrigger : MonoBehaviour
                 honeycombGroundMaterial.color = darkYellow;
             }
             
+            // Show ability message
+            if (abilityMessageUI != null)
+            {
+                StartCoroutine(ShowAbilityMessage());
+            }
+            
             Debug.Log("Player should now have yellow and can climb walls.");
         }
+    }
+    
+    IEnumerator ShowAbilityMessage()
+    {
+        abilityMessageUI.SetActive(true);
+        yield return new WaitForSeconds(10f);
+        abilityMessageUI.SetActive(false);
+        
+        // Now disable the trigger
         gameObject.SetActive(false);
     }
 }
