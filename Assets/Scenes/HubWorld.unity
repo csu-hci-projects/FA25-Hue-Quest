@@ -704,7 +704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8849795792881851338, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
       propertyPath: m_Name
-      value: Button
+      value: YellowLevelEntrance
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3455,7 +3455,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RedEntranceColor
   redMat: {fileID: 2100000, guid: 398971ca7bb6fe840ada1cb0dd428e8f, type: 2}
-  mainManager: {fileID: 637749710}
+  mainManager: {fileID: 0}
+  renderer: {fileID: 0}
 --- !u!1 &1455238604 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 621cb88f96b998c488443f8cd0955635, type: 3}
@@ -3799,7 +3800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9439af20cd1617145892e8cbd213dd35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RedEntranceShut
-  mainManager: {fileID: 637749710}
 --- !u!1 &1651991499 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8226489773976278502, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
@@ -4415,7 +4415,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RedEntranceColor
   redMat: {fileID: 2100000, guid: 398971ca7bb6fe840ada1cb0dd428e8f, type: 2}
-  mainManager: {fileID: 637749710}
+  mainManager: {fileID: 0}
+  renderer: {fileID: 0}
 --- !u!1001 &2135896668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4426,7 +4427,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: c4cca24570a3eb1478f1ede521f132d2, type: 3}
       propertyPath: m_Name
-      value: Mixed_Cactus_02
+      value: OrangeLevelEntrance
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c4cca24570a3eb1478f1ede521f132d2, type: 3}
       propertyPath: m_LocalPosition.x

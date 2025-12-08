@@ -4,11 +4,12 @@ public class RedEntranceShut : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     Collider entranceCollider;
-    [SerializeField] MainManager mainManager;
+    MainManager mainManager;
 
     private bool isShut = false;
     void Start()
     {
+        mainManager = GameObject.FindAnyObjectByType<MainManager>();
         entranceCollider = GetComponent<BoxCollider>();
     }
 

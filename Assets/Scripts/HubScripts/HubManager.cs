@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class Manager : MonoBehaviour
 {
@@ -53,7 +54,7 @@ public class Manager : MonoBehaviour
         audioManager.toggleMenu(true);
         Debug.Log("Settings Button Pressed");
     }
-    
+
     //add PlayerPrefs reset?
     public void ResetGame()
     {

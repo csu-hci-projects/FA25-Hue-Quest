@@ -33,6 +33,7 @@ public class RedTrigger : MonoBehaviour
             {
                 MainManager.instance.hasRed = true;
             }
+            
             Debug.Log("Player should now have red and can jump.");
             Debug.Log("Adding colors...");
             AddRedToLvl();
