@@ -533,6 +533,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReturnToHubButton
   hubSceneName: HubWorld
+  IsLevelEnd: 1
+  colorKey: 
+  fadeKey: 
 --- !u!1001 &483319205
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -843,9 +843,11 @@ MonoBehaviour:
   settingsMenu: {fileID: 7417898321731998684}
   musicSlider: {fileID: 6310417351077275560}
   SFXSlider: {fileID: 726734784926117822}
-  jump: {fileID: 0}
+  jump: {fileID: 8300000, guid: 35fbad8cdde724f11ba6481f1e64af71, type: 3}
   select: {fileID: 8300000, guid: a235d590ef2a04d1b85b61ef4c21337c, type: 3}
   walk: {fileID: 8300000, guid: 81652031b64c342cc8dbc59c138d77c5, type: 3}
+  death: {fileID: 0}
+  BGM: {fileID: 8300000, guid: 51a4f1157b7ff1449b5e5cf064d584c7, type: 3}
 --- !u!1 &6366357293224176001
 GameObject:
   m_ObjectHideFlags: 0
