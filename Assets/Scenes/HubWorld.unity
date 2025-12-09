@@ -779,7 +779,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147933058}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e75f0074d40dc41e2b8bc0202d9cea03, type: 3}
   m_Name: 
@@ -795,6 +795,24 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -4587302668392987624, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
   m_PrefabInstance: {fileID: 1890026081}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &147933068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147933058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b93712c50fa9a47b88ffb0092b051d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OceanColorTransition
+  hubRenderer: {fileID: 147933065}
+  materialIndex: 0
+  unlockedColor: {r: 0.12941177, g: 0.13725491, b: 0.35686275, a: 0}
+  fadeDuration: 10
+  unlockKey: Blueunlock
+  fadeKey: Blue
 --- !u!1 &198866839 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5117700066308340382, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
@@ -915,6 +933,52 @@ MonoBehaviour:
   fadeDuration: 10
   unlockKey: OrangeUnlock
   fadeKey: OrangeFade
+--- !u!1 &235182337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 235182339}
+  - component: {fileID: 235182338}
+  m_Layer: 0
+  m_Name: OceanMatsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &235182338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235182337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6555099e10417a8429962122fd138231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OceanManager
+  hubRenderer: {fileID: 147933065}
+  runtimeMats: []
+--- !u!4 &235182339
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235182337}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.42272, y: 18.31151, z: -18.25812}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &248575563 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2614200769521716864, guid: a1f089d0c73b18249b8250d056f343a8, type: 3}
@@ -1054,6 +1118,52 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &292057958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 292057960}
+  - component: {fileID: 292057959}
+  m_Layer: 0
+  m_Name: IcosphereMatsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &292057959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292057958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f5de215ffdafa94589fdbf3909b47e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HubMaterialManager
+  hubRenderer: {fileID: 198866845}
+  runtimeMats: []
+--- !u!4 &292057960
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292057958}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.42272, y: 18.31151, z: -18.25812}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &292823187
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4947,6 +5057,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 117214286460000749, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 147933063}
+    - targetCorrespondingSourceObject: {fileID: 117214286460000749, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 147933068}
   m_SourcePrefab: {fileID: 100100000, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
 --- !u!4 &1930621900 stripped
 Transform:
@@ -5324,3 +5437,5 @@ SceneRoots:
   - {fileID: 51684441}
   - {fileID: 1578642363}
   - {fileID: 2135896668}
+  - {fileID: 292057960}
+  - {fileID: 235182339}

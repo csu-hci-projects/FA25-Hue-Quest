@@ -16,13 +16,20 @@ public class EndLevelColorFade : MonoBehaviour
     //public string unlockKey;          // e.g. "YellowUnlocked"
     //public string fadeKey;            // e.g. "FadeYellowNextLoad"
 
+    //test
+    private HubMaterialManager hubMaterialManager;
+
     void Start()
     {
         // Access the correct material slot
-        Material[] mats = hubRenderer.materials;
-        runtimeMat = new Material(mats[materialIndex]);
-        mats[materialIndex] = runtimeMat;
-        hubRenderer.materials = mats;
+        //Material[] mats = hubRenderer.materials;
+        //runtimeMat = new Material(mats[materialIndex]);
+        //mats[materialIndex] = runtimeMat;
+        //hubRenderer.materials = mats;
+
+        //test
+        hubMaterialManager = GameObject.FindAnyObjectByType<HubMaterialManager>();
+        runtimeMat = hubMaterialManager.runtimeMats[materialIndex];
 
         //end - mainManager
         mainManager = GameObject.FindAnyObjectByType<MainManager>();
