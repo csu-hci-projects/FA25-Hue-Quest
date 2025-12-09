@@ -137,11 +137,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1600541917375062427, guid: 8a061f7671de10c41bb4b5587f4670a3, type: 3}
       propertyPath: hasRed
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1600541917375062427, guid: 8a061f7671de10c41bb4b5587f4670a3, type: 3}
       propertyPath: hasGreen
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1600541917375062427, guid: 8a061f7671de10c41bb4b5587f4670a3, type: 3}
       propertyPath: hasOrange
@@ -4549,6 +4549,69 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b782f6e89cdd2a4419dbedd552ae90ad, type: 3}
+--- !u!1001 &1286744833
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5387314027961532047, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 460.1514
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387314027961532047, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387314027961532047, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 616.6939
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387314027961532047, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387314027961532047, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387314027961532047, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387314027961532047, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387314027961532047, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387314027961532047, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387314027961532047, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849795792881851338, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
+      propertyPath: m_Name
+      value: StartExitButton
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8849795792881851338, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1854246315}
+    - targetCorrespondingSourceObject: {fileID: 8849795792881851338, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1854246317}
+  m_SourcePrefab: {fileID: 100100000, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
 --- !u!1 &1296673261
 GameObject:
   m_ObjectHideFlags: 0
@@ -6181,6 +6244,48 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 566822a86a4cb074897a398b480a7128, type: 3}
+--- !u!1 &1854246314 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8849795792881851338, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
+  m_PrefabInstance: {fileID: 1286744833}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1854246315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854246314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cf368c468afa4db18dfef66083892c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReturnToHubButton
+  hubSceneName: HubWorld
+  IsLevelEnd: 0
+  colorKey: '-'
+  fadeKey: '-'
+--- !u!65 &1854246317
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854246314}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1866802620 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 097d934566947854b838f51016a9462b, type: 3}
@@ -6998,3 +7103,4 @@ SceneRoots:
   - {fileID: 1296673262}
   - {fileID: 1828350001}
   - {fileID: 461186683}
+  - {fileID: 1286744833}
