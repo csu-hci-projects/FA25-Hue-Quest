@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class Manager : MonoBehaviour
 {
@@ -46,12 +47,13 @@ public class Manager : MonoBehaviour
         audioManager.PlaySelect();
         Application.Quit();
     }
-    
+
     public void Settings()
     {
         audioManager.PlaySelect();
         MainManager.instance.toggleMenu(true);
         Debug.Log("Settings Button Pressed");
     }
+
 
 }

@@ -1071,8 +1071,8 @@ MonoBehaviour:
   caveMat: {fileID: 2100000, guid: 359136f0a4f409046b57aced8aa1742a, type: 2}
   script: {fileID: 1806444426}
   audioManager: {fileID: 2126402197}
-  startSong: {fileID: 0}
-  redSong: {fileID: 8300000, guid: 51a4f1157b7ff1449b5e5cf064d584c7, type: 3}
+  startSong: {fileID: 8300000, guid: 559c232a43caebe41870ce54786f604e, type: 3}
+  redSong: {fileID: 8300000, guid: fc5af015011ea3745b7f78ea1dd1049f, type: 3}
   lavaPlane: {fileID: 1815252669}
 --- !u!54 &593080733
 Rigidbody:
