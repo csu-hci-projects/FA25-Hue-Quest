@@ -1726,6 +1726,10 @@ PrefabInstance:
       propertyPath: Lens.NearClipPlane
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 7478568292052052853, guid: 8a061f7671de10c41bb4b5587f4670a3, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1873872568}
     - target: {fileID: 8027336252042647495, guid: 8a061f7671de10c41bb4b5587f4670a3, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -6573,7 +6577,7 @@ PrefabInstance:
     - target: {fileID: 2477155740227230114, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
       propertyPath: BGM
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 0ad591428b0c18c4da51fe3bf98dbc63, type: 3}
     - target: {fileID: 2477155740227230114, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
       propertyPath: death
       value: 
