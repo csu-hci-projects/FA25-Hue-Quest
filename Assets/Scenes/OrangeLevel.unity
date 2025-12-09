@@ -331,6 +331,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 7478568292052052853, guid: 8a061f7671de10c41bb4b5587f4670a3, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 2051614969}
     - target: {fileID: 8027336252042647495, guid: 8a061f7671de10c41bb4b5587f4670a3, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -6988,7 +6992,7 @@ PrefabInstance:
     - target: {fileID: 2477155740227230114, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
       propertyPath: BGM
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 3c6672bfa5b91734991a73886a14123a, type: 3}
     - target: {fileID: 6344344651409791545, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -6998,6 +7002,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
+--- !u!114 &2051614969 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2477155740227230114, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
+  m_PrefabInstance: {fileID: 2051614968}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1762a2585d11ae94da4f863039007580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
 --- !u!1001 &2074658428
 PrefabInstance:
   m_ObjectHideFlags: 0
