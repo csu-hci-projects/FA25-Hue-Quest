@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections;
 
-public class ColorTransition : MonoBehaviour
+
+public class OceanColorTransition : MonoBehaviour
 {
     [Header("Material Setup")]
     public Renderer hubRenderer;      // The icosphere
@@ -15,7 +16,7 @@ public class ColorTransition : MonoBehaviour
     public string fadeKey;            // e.g. "FadeYellowNextLoad"
 
     //color fix
-    private HubMaterialManager hubMaterialManager;
+    private OceanManager oceanManager;
 
     void Start()
     {
@@ -24,18 +25,17 @@ public class ColorTransition : MonoBehaviour
         //runtimeMat = new Material(mats[materialIndex]);
         //mats[materialIndex] = runtimeMat;
         //hubRenderer.materials = mats;
-        hubMaterialManager = GameObject.FindAnyObjectByType<HubMaterialManager>();
-        runtimeMat = hubMaterialManager.runtimeMats[materialIndex];
+        oceanManager = GameObject.FindAnyObjectByType<OceanManager>();
+        runtimeMat = oceanManager.runtimeMats[materialIndex];
 
         bool isUnlocked = PlayerPrefs.GetInt(unlockKey, 0) == 1;
         bool mustFade = PlayerPrefs.GetInt(fadeKey, 0) == 1;
-        Debug.Log(unlockKey +" isUnlocked: " + isUnlocked);
-        Debug.Log(fadeKey + " mustFade: " + mustFade);
+
         if (isUnlocked && mustFade)
         {
             runtimeMat.color = greyColor;
-            Debug.Log("Start: " + greyColor);
-            Debug.Log("Target: " + unlockedColor);
+            //testing
+            Debug.Log("color is " + unlockedColor + ", isUnlocked and mustFade, starting coroutine...");
             StartCoroutine(FadeTo(unlockedColor));
             PlayerPrefs.SetInt(fadeKey, 0);
             PlayerPrefs.Save();
@@ -52,19 +52,17 @@ public class ColorTransition : MonoBehaviour
 
     IEnumerator FadeTo(Color target)
     {
-        Color start = greyColor;
+        Color start = runtimeMat.color;
         float t = 0f;
 
         while (t < fadeDuration)
         {
             t += Time.deltaTime;
-            //Debug.Log( unlockKey + " t: " + t);
-
             runtimeMat.color = Color.Lerp(start, target, t / fadeDuration);
-            //Debug.Log("Color: " + runtimeMat.color);
             yield return null;
         }
 
         runtimeMat.color = target;
     }
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
 }

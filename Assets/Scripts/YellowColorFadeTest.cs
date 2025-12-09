@@ -1,22 +1,24 @@
 using UnityEngine;
 using System.Collections;
+using NUnit.Framework;
 
-public class EndLevelColorFade : MonoBehaviour
+
+public class YellowColorFadeTest : MonoBehaviour
 {
-     [Header("Material Setup")]
+   [Header("Material Setup")]
     public Renderer hubRenderer;      // The icosphere
     public int materialIndex;         // Which region this script controls
     public Color unlockedColor;       // e.g. yellow, red, green, etc.
     public float fadeDuration = 10f;
 
+    MainManager mainManager;
 
     private Material runtimeMat;
     private readonly Color greyColor = Color.grey;
+
+    bool isColored;
     //public string unlockKey;          // e.g. "YellowUnlocked"
     //public string fadeKey;            // e.g. "FadeYellowNextLoad"
-
-    //test
-    private HubMaterialManager hubMaterialManager;
 
     void Start()
     {
@@ -26,43 +28,33 @@ public class EndLevelColorFade : MonoBehaviour
         //mats[materialIndex] = runtimeMat;
         //hubRenderer.materials = mats;
 
-        //test
-        hubMaterialManager = GameObject.FindAnyObjectByType<HubMaterialManager>();
-        runtimeMat = hubMaterialManager.runtimeMats[materialIndex];
-
         //end - mainManager
+        mainManager = GameObject.FindAnyObjectByType<MainManager>();
 
-        //bool isUnlocked = PlayerPrefs.GetInt(unlockKey, 0) == 1;
-        //bool mustFade = PlayerPrefs.GetInt(fadeKey, 0) == 1;
+        isColored = false;
+    }
 
-        //end - isUnlocked = hasAllColors;
-        //end - mustFade = true;
-        bool isUnlocked = hasAllColors();
-        bool mustFade = true;
-
-        if (isUnlocked && mustFade)
+    void Update()
+    {
+        //move color transition here?
+        if (!isColored && hasRedColor())
         {
-            runtimeMat.color = greyColor;
-            StartCoroutine(FadeTo(unlockedColor));
-            //PlayerPrefs.SetInt(fadeKey, 0);
-            //PlayerPrefs.Save();
-
-            //end - set mustfade
-            mustFade = false;
-        }
-        else if (isUnlocked)
-        {
-            runtimeMat.color = unlockedColor;
+            Debug.Log("Red unlocked, continent is now " + unlockedColor);
+            //runtimeMat.color = unlockedColor;
+            hubRenderer.materials[materialIndex].color = unlockedColor;
+            isColored = true;
         }
         else
         {
-            runtimeMat.color = greyColor;
+            //runtimeMat.color = greyColor;
+            hubRenderer.materials[materialIndex].color = greyColor;
         }
+
     }
 
-    private bool hasAllColors()
+    private bool hasRedColor()
     {
-        if(MainManager.instance.hasBlue && MainManager.instance.hasGreen && MainManager.instance.hasOrange && MainManager.instance.hasRed && MainManager.instance.hasYellow)
+        if(mainManager.hasRed)
         {
             return true;
         } else

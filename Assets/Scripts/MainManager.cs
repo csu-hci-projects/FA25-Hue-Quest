@@ -25,4 +25,13 @@ public class MainManager : MonoBehaviour
         instance.hasOrange = PlayerPrefs.GetInt("OrangeUnlock", 0) == 1;
         DontDestroyOnLoad(gameObject);
     }
+
+    public void resetAll()
+    {
+        hasBlue = false;
+        hasRed = false;
+        hasGreen = false;
+        hasOrange = false;
+        hasYellow = false;
+    }
 }

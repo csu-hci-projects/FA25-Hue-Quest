@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467e10669cdbd4f48af35e23dbdbfabd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ladder
-  liftStrength: 0
+  liftStrength: 5
 --- !u!65 &78555300
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3639,7 +3639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467e10669cdbd4f48af35e23dbdbfabd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ladder
-  liftStrength: 0
+  liftStrength: 5
 --- !u!65 &1055921555
 BoxCollider:
   m_ObjectHideFlags: 0
