@@ -6,7 +6,7 @@ public class ReturnToHubButton : MonoBehaviour
     [SerializeField] string hubSceneName = "HubWorld";
 
     //adding UnlockLevelColor functionality
-    [SerializeField] bool IsLevelEnd = false;
+    [SerializeField] bool IsLevelEnd;
     public string colorKey;
     public string fadeKey;
 
@@ -19,6 +19,7 @@ public class ReturnToHubButton : MonoBehaviour
             //UnlockLevelColor function
             if (IsLevelEnd)
             {
+                Debug.Log("Adding Color to PlayerPrefs");
                 PlayerPrefs.SetInt(colorKey, 1);
                 PlayerPrefs.SetInt(fadeKey, 1);
                 PlayerPrefs.Save();

@@ -24,10 +24,13 @@ public class ColorTransition : MonoBehaviour
 
         bool isUnlocked = PlayerPrefs.GetInt(unlockKey, 0) == 1;
         bool mustFade = PlayerPrefs.GetInt(fadeKey, 0) == 1;
-
+        Debug.Log(unlockKey +" isUnlocked: " + isUnlocked);
+        Debug.Log(fadeKey + " mustFade: " + mustFade);
         if (isUnlocked && mustFade)
         {
             runtimeMat.color = greyColor;
+            Debug.Log("Start: " + greyColor);
+            Debug.Log("Target: " + unlockedColor);
             StartCoroutine(FadeTo(unlockedColor));
             PlayerPrefs.SetInt(fadeKey, 0);
             PlayerPrefs.Save();
@@ -44,13 +47,16 @@ public class ColorTransition : MonoBehaviour
 
     IEnumerator FadeTo(Color target)
     {
-        Color start = runtimeMat.color;
+        Color start = greyColor;
         float t = 0f;
 
         while (t < fadeDuration)
         {
             t += Time.deltaTime;
+            //Debug.Log( unlockKey + " t: " + t);
+
             runtimeMat.color = Color.Lerp(start, target, t / fadeDuration);
+            //Debug.Log("Color: " + runtimeMat.color);
             yield return null;
         }
 
