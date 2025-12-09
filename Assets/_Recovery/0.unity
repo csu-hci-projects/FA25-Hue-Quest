@@ -852,7 +852,7 @@ Transform:
   m_GameObject: {fileID: 714181957}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 260.7, y: 35.1, z: 227.03612}
+  m_LocalPosition: {x: 260.7, y: 44.6, z: 227.03612}
   m_LocalScale: {x: 12.67, y: 12.67, z: 12.67}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1076,7 +1076,7 @@ MonoBehaviour:
   audioManager: {fileID: 1287653079}
   startSong: {fileID: 8300000, guid: 67559eeaac401394fb17f74470e73ce1, type: 3}
   greenSong: {fileID: 8300000, guid: 0ad591428b0c18c4da51fe3bf98dbc63, type: 3}
-  killPlane: {fileID: 714181957}
+  killPlane: {fileID: 0}
 --- !u!54 &821159605
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2107,15 +2107,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1697906836241000970, guid: 8a061f7671de10c41bb4b5587f4670a3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 129.6
+      value: 259.1
       objectReference: {fileID: 0}
     - target: {fileID: 1697906836241000970, guid: 8a061f7671de10c41bb4b5587f4670a3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4
+      value: 37.6
       objectReference: {fileID: 0}
     - target: {fileID: 1697906836241000970, guid: 8a061f7671de10c41bb4b5587f4670a3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 174.5
+      value: 235.3
       objectReference: {fileID: 0}
     - target: {fileID: 1697906836241000970, guid: 8a061f7671de10c41bb4b5587f4670a3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2323,7 +2323,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1969446079}
   - component: {fileID: 1969446078}
-  - component: {fileID: 1969446080}
   - component: {fileID: 1969446077}
   - component: {fileID: 1969446076}
   m_Layer: 0
@@ -2420,26 +2419,12 @@ Transform:
   m_GameObject: {fileID: 1969446075}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 257.9, y: 48.7, z: 224}
+  m_LocalPosition: {x: 257.9, y: 55.8, z: 224}
   m_LocalScale: {x: 9.21, y: 9.21, z: 9.21}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1969446080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1969446075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20ef8081d464f554eb494a6e23ba1189, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Checkpoint
-  killPlane: {fileID: 714181957}
-  respawnPoint: {fileID: 1291693464}
 --- !u!1001 &2044237129
 PrefabInstance:
   m_ObjectHideFlags: 0
