@@ -787,9 +787,9 @@ MonoBehaviour:
   hubRenderer: {fileID: 147933065}
   materialIndex: 0
   unlockedColor: {r: 0.12941177, g: 0.13725491, b: 0.35686275, a: 0}
-  fadeDuration: 10
-  unlockKey: Blueunlock
-  fadeKey: Blue
+  fadeDuration: 5
+  unlockKey: BlueUnlock
+  fadeKey: BlueFade
 --- !u!23 &147933065 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -4587302668392987624, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
@@ -877,7 +877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ColorTransition
   hubRenderer: {fileID: 198866845}
   materialIndex: 5
-  unlockedColor: {r: 1, g: 0.10980392, b: 0, a: 0}
+  unlockedColor: {r: 1, g: 0.110389605, b: 0, a: 1}
   fadeDuration: 10
   unlockKey: RedUnlock
   fadeKey: RedFade
@@ -897,8 +897,8 @@ MonoBehaviour:
   materialIndex: 6
   unlockedColor: {r: 0, g: 1, b: 0.0075297356, a: 0}
   fadeDuration: 10
-  unlockKey: Greenunlock
-  fadeKey: Green
+  unlockKey: GreenUnlock
+  fadeKey: GreenFade
 --- !u!114 &198866853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -933,6 +933,24 @@ MonoBehaviour:
   fadeDuration: 10
   unlockKey: OrangeUnlock
   fadeKey: OrangeFade
+--- !u!114 &198866858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198866839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e75f0074d40dc41e2b8bc0202d9cea03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColorTransition
+  hubRenderer: {fileID: 198866845}
+  materialIndex: 1
+  unlockedColor: {r: 0.17254902, g: 0.44705886, b: 0.49411768, a: 1}
+  fadeDuration: 10
+  unlockKey: BlueUnlock
+  fadeKey: BlueFade
 --- !u!1 &235182337
 GameObject:
   m_ObjectHideFlags: 0
@@ -4198,8 +4216,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RedEntranceColor
   redMat: {fileID: 2100000, guid: 398971ca7bb6fe840ada1cb0dd428e8f, type: 2}
-  mainManager: {fileID: 0}
-  renderer: {fileID: 0}
 --- !u!1 &1455238604 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 621cb88f96b998c488443f8cd0955635, type: 3}
@@ -5004,6 +5020,22 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -2571118854743697038, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
+      propertyPath: m_RayTracingMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2571118854743697038, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2571118854743697038, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2571118854743697038, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2571118854743697038, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 12e9a8297bf236047aa8451a06c9db6c, type: 2}
@@ -5048,6 +5080,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -5117700066308340382, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 198866853}
+    - targetCorrespondingSourceObject: {fileID: -5117700066308340382, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 198866858}
     - targetCorrespondingSourceObject: {fileID: -5117700066308340382, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 198866857}
@@ -5164,8 +5199,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RedEntranceColor
   redMat: {fileID: 2100000, guid: 398971ca7bb6fe840ada1cb0dd428e8f, type: 2}
-  mainManager: {fileID: 0}
-  renderer: {fileID: 0}
 --- !u!1001 &2135896668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5279,31 +5312,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -85.36843
+      value: 0.16354007
       objectReference: {fileID: 0}
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.31579
+      value: 0.9905262
       objectReference: {fileID: 0}
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -356.31573
+      value: -7.79058
       objectReference: {fileID: 0}
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.98315203
+      value: 0.994038
       objectReference: {fileID: 0}
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.036885496
+      value: 0.1090344
       objectReference: {fileID: 0}
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.17890373
+      value: -0.000000029624648
       objectReference: {fileID: 0}
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.006712039
+      value: 0.000000003249479
       objectReference: {fileID: 0}
     - target: {fileID: 420012172418552158, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_IsActive

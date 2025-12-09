@@ -4,7 +4,6 @@ public class RedEntranceShut : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     Collider entranceCollider;
-    MainManager mainManager;
 
     private bool isShut = false;
     void Start()
@@ -16,7 +15,7 @@ public class RedEntranceShut : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isShut == false && mainManager != null && mainManager.hasRed)
+        if (isShut == false && MainManager.instance != null && MainManager.instance.hasRed)
         {
             if (entranceCollider != null)
             {

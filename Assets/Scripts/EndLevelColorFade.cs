@@ -9,7 +9,6 @@ public class EndLevelColorFade : MonoBehaviour
     public Color unlockedColor;       // e.g. yellow, red, green, etc.
     public float fadeDuration = 10f;
 
-    MainManager mainManager;
 
     private Material runtimeMat;
     private readonly Color greyColor = Color.grey;
@@ -32,7 +31,6 @@ public class EndLevelColorFade : MonoBehaviour
         runtimeMat = hubMaterialManager.runtimeMats[materialIndex];
 
         //end - mainManager
-        mainManager = GameObject.FindAnyObjectByType<MainManager>();
 
         //bool isUnlocked = PlayerPrefs.GetInt(unlockKey, 0) == 1;
         //bool mustFade = PlayerPrefs.GetInt(fadeKey, 0) == 1;
@@ -64,7 +62,7 @@ public class EndLevelColorFade : MonoBehaviour
 
     private bool hasAllColors()
     {
-        if(mainManager.hasBlue && mainManager.hasGreen && mainManager.hasOrange && mainManager.hasRed && mainManager.hasYellow)
+        if(MainManager.instance.hasBlue && MainManager.instance.hasGreen && MainManager.instance.hasOrange && MainManager.instance.hasRed && MainManager.instance.hasYellow)
         {
             return true;
         } else
