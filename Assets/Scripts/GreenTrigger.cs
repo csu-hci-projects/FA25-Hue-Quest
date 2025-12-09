@@ -8,6 +8,7 @@ public class GreenTrigger : MonoBehaviour
     [SerializeField] AudioManager audioManager;
     [SerializeField] AudioClip startSong;
     [SerializeField] AudioClip greenSong;
+    [SerializeField] GameObject killPlane;
     void Start()
     {
         if (player.hasGreen)
@@ -47,6 +48,7 @@ public class GreenTrigger : MonoBehaviour
             terrain.treeBillboardDistance = 400;
             Debug.Log("Player should now have green and can climb.");
         }
+        killPlane.SetActive(false);
         gameObject.SetActive(false);
     }
 }
