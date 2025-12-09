@@ -4,6 +4,7 @@ public class MovingLaser : MonoBehaviour
 {
     [Header("Respawn Settings")]
     public Transform respawnPoint;  // drag your respawn empty GameObject here
+    public CameraToggle cameraToggle;  // drag CameraManager here
     
     [Header("Movement Settings")]
     public float moveSpeed = 2f;           // how fast laser moves
@@ -51,6 +52,12 @@ public class MovingLaser : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player hit moving laser! Respawning...");
+            
+            // Reset camera to normal view
+            if (cameraToggle != null)
+            {
+                cameraToggle.ResetToNormalCamera();
+            }
             
             if (respawnPoint != null)
             {
