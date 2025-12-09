@@ -28,6 +28,9 @@ public class EndScreenActivate : MonoBehaviour
             playerCam.SetActive(false);
             menu.SetActive(true);
             audioManager.BGM = endsong;
+            //unlock cursor
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 }
