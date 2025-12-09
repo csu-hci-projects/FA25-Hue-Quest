@@ -1773,7 +1773,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551811653}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -5160,8 +5160,8 @@ MonoBehaviour:
   terrain: {fileID: 1536019513}
   dashMessageUI: {fileID: 1056035128}
   audioManager: {fileID: 2477155740227230114, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
-  startSong: {fileID: 0}
-  orangeSong: {fileID: 0}
+  startSong: {fileID: 8300000, guid: 3c6672bfa5b91734991a73886a14123a, type: 3}
+  orangeSong: {fileID: 8300000, guid: 67559eeaac401394fb17f74470e73ce1, type: 3}
 --- !u!135 &1486035012
 SphereCollider:
   m_ObjectHideFlags: 0
