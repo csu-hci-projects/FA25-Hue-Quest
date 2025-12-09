@@ -1,6 +1,7 @@
-using UnityEditor.SearchService;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class MainManager : MonoBehaviour
     public bool hasPurpule = false;
     public bool hasOrange = false;
     [SerializeField] GameObject settingsMenu;
+    [SerializeField] public Slider musicSlider;
+    [SerializeField] public Slider SFXSlider;
     void Awake()
     {
         if (instance != null)

@@ -1,13 +1,11 @@
 
 using UnityEngine;
-using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource SFXSource;
-    [SerializeField] Slider musicSlider;
-    [SerializeField] Slider SFXSlider;
+
     
     public AudioClip jump;
     public AudioClip select;
@@ -61,11 +59,11 @@ public class AudioManager : MonoBehaviour
 
     public void changeSFXVolume()
     {
-        SFXSource.volume = SFXSlider.value;
+        SFXSource.volume = MainManager.instance.SFXSlider.value;
     }
 
     public void changeMusicVolume()
     {
-        musicSource.volume = musicSlider.value;
+        musicSource.volume = MainManager.instance.musicSlider.value;
     }
 }
