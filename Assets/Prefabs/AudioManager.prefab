@@ -48,8 +48,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   musicSource: {fileID: 7379570198330153848}
   SFXSource: {fileID: 5932259600098443430}
-  musicSlider: {fileID: 0}
-  SFXSlider: {fileID: 0}
   jump: {fileID: 8300000, guid: 35fbad8cdde724f11ba6481f1e64af71, type: 3}
   select: {fileID: 8300000, guid: a235d590ef2a04d1b85b61ef4c21337c, type: 3}
   walk: {fileID: 8300000, guid: 81652031b64c342cc8dbc59c138d77c5, type: 3}
@@ -98,7 +96,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 3c6672bfa5b91734991a73886a14123a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
