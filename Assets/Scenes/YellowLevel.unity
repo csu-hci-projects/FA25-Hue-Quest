@@ -3075,6 +3075,9 @@ MonoBehaviour:
   skyboxMaterial: {fileID: 2100000, guid: c37e7e7b65af84dbfa354550d986350a, type: 2}
   honeycombGroundMaterial: {fileID: 2100000, guid: 1deda71e3c23d4097986755eaf0151a6, type: 2}
   abilityMessageUI: {fileID: 1637858087}
+  audioManager: {fileID: 1873872568}
+  startSong: {fileID: 0}
+  yellowSong: {fileID: 0}
 --- !u!1 &941121850
 GameObject:
   m_ObjectHideFlags: 0
@@ -6340,6 +6343,82 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df83f8b3d2b6b4ac7b57c2dc883e5f2e, type: 3}
+--- !u!1001 &1873872567
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1585274708095451728, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 97.620735
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585274708095451728, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.30001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585274708095451728, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 386.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585274708095451728, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585274708095451728, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585274708095451728, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585274708095451728, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585274708095451728, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585274708095451728, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585274708095451728, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2477155740227230114, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
+      propertyPath: BGM
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2477155740227230114, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
+      propertyPath: death
+      value: 
+      objectReference: {fileID: 8300000, guid: 72127805eb2bc4e7fbf2e02eca266cfa, type: 3}
+    - target: {fileID: 6344344651409791545, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
+--- !u!114 &1873872568 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2477155740227230114, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
+  m_PrefabInstance: {fileID: 1873872567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1762a2585d11ae94da4f863039007580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
 --- !u!1 &1901595482
 GameObject:
   m_ObjectHideFlags: 0
@@ -6847,3 +6926,4 @@ SceneRoots:
   - {fileID: 941121852}
   - {fileID: 39927093}
   - {fileID: 317450193}
+  - {fileID: 1873872567}

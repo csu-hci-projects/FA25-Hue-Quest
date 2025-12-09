@@ -8,11 +8,15 @@ public class RedTrigger : MonoBehaviour
 
     public GameObject script;
 
+    [SerializeField] AudioManager audioManager;
+    [SerializeField] AudioClip startSong;
+    [SerializeField] AudioClip redSong;
+
     public GameObject lavaPlane;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        audioManager.PlaySong(startSong,0);
     }
 
     // Update is called once per frame
@@ -29,6 +33,7 @@ public class RedTrigger : MonoBehaviour
             Debug.Log("Player has picked up red paint");
             ColorManager playerColorManager = other.gameObject.GetComponent<ColorManager>();
             playerColorManager.hasRed = true;
+            audioManager.PlaySong(redSong,0);
             if (MainManager.instance != null)
             {
                 MainManager.instance.hasRed = true;
