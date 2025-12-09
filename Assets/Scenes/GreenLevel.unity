@@ -514,6 +514,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8849795792881851338, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 390787067}
+    - targetCorrespondingSourceObject: {fileID: 8849795792881851338, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 390787068}
   m_SourcePrefab: {fileID: 100100000, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
 --- !u!1 &390787066 stripped
 GameObject:
@@ -533,9 +536,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReturnToHubButton
   hubSceneName: HubWorld
-  IsLevelEnd: 1
-  colorKey: 
-  fadeKey: 
+  IsLevelEnd: 0
+  colorKey: GreenUnlock
+  fadeKey: GreenFade
+--- !u!65 &390787068
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390787066}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &483319205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1403,6 +1427,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8849795792881851338, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1322423066}
+    - targetCorrespondingSourceObject: {fileID: 8849795792881851338, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1322423065}
   m_SourcePrefab: {fileID: 100100000, guid: c15b312a5587889458cc2c48c3f02fa5, type: 3}
 --- !u!1 &1322423064 stripped
@@ -1419,12 +1446,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 1322423064}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2f55c8c9f90943e38054ec9c3ece03a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9cf368c468afa4db18dfef66083892c7, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UnlockLevelColor
-  hubScene: HubWorld
-  colorKey: Greenunlock
-  fadeKey: Green
+  m_EditorClassIdentifier: Assembly-CSharp::ReturnToHubButton
+  hubSceneName: HubWorld
+  IsLevelEnd: 1
+  colorKey: GreenUnlock
+  fadeKey: GreenFade
+--- !u!65 &1322423066
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322423064}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1362068655
 GameObject:
   m_ObjectHideFlags: 0

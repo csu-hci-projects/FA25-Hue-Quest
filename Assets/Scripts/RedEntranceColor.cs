@@ -5,7 +5,6 @@ public class RedEntranceColor : MonoBehaviour
     [SerializeField] Material redMat;
     private bool turnedRed = false;
 
-    [SerializeField] MainManager mainManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,7 +13,7 @@ public class RedEntranceColor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mainManager != null && turnedRed == false && mainManager.hasRed)
+        if (MainManager.instance != null && turnedRed == false && MainManager.instance.hasRed)
         {
             this.GetComponent<MeshRenderer>().material = redMat;
             turnedRed = true;
