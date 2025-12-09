@@ -811,8 +811,8 @@ MonoBehaviour:
   materialIndex: 0
   unlockedColor: {r: 0.12941177, g: 0.13725491, b: 0.35686275, a: 0}
   fadeDuration: 10
-  unlockKey: Blueunlock
-  fadeKey: Blue
+  unlockKey: BlueUnlock
+  fadeKey: BlueFade
 --- !u!1 &198866839 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5117700066308340382, guid: bd4b66ef9e594453cb4882970660e22a, type: 3}
@@ -5312,31 +5312,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.16354007
+      value: -85.36843
       objectReference: {fileID: 0}
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9905262
+      value: 16.31579
       objectReference: {fileID: 0}
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.79058
+      value: -356.31573
       objectReference: {fileID: 0}
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.994038
+      value: 0.98315203
       objectReference: {fileID: 0}
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.1090344
+      value: 0.036885496
       objectReference: {fileID: 0}
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000029624648
+      value: -0.17890373
       objectReference: {fileID: 0}
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000003249479
+      value: 0.006712039
       objectReference: {fileID: 0}
     - target: {fileID: 420012172418552158, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_IsActive

@@ -8,7 +8,6 @@ public class RedEntranceShut : MonoBehaviour
     private bool isShut = false;
     void Start()
     {
-        mainManager = GameObject.FindAnyObjectByType<MainManager>();
         entranceCollider = GetComponent<BoxCollider>();
     }
 
