@@ -859,7 +859,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ColorTransition
   hubRenderer: {fileID: 198866845}
   materialIndex: 5
-  unlockedColor: {r: 0.7264151, g: 0.18652178, b: 0.119927004, a: 1}
+  unlockedColor: {r: 1, g: 0.110389605, b: 0, a: 1}
   fadeDuration: 10
   unlockKey: RedUnlock
   fadeKey: RedFade
@@ -5199,31 +5199,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -85.36843
+      value: 0.16354007
       objectReference: {fileID: 0}
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.31579
+      value: 0.9905262
       objectReference: {fileID: 0}
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -356.31573
+      value: -7.79058
       objectReference: {fileID: 0}
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.98315203
+      value: 0.994038
       objectReference: {fileID: 0}
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.036885496
+      value: 0.1090344
       objectReference: {fileID: 0}
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.17890373
+      value: -0.000000029624648
       objectReference: {fileID: 0}
     - target: {fileID: 146426771262873329, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.006712039
+      value: 0.000000003249479
       objectReference: {fileID: 0}
     - target: {fileID: 420012172418552158, guid: 9b20b6af031581347b3c448e06a46978, type: 3}
       propertyPath: m_IsActive

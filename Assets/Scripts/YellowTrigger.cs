@@ -8,6 +8,9 @@ public class YellowTrigger : MonoBehaviour
     [SerializeField] Material skyboxMaterial;      // drag your skybox material here
     [SerializeField] Material honeycombGroundMaterial;  // drag honeycomb ground material here
     [SerializeField] GameObject abilityMessageUI;  // drag your UI Text/Panel here
+    [SerializeField] AudioManager audioManager;
+    [SerializeField] AudioClip startSong;
+    [SerializeField] AudioClip yellowSong;
     
     private Color blackAndWhite = new Color(0.5f, 0.5f, 0.5f); // grayscale for skybox
     private Color towerBlackAndWhite = new Color(1f, 1f, 1f);  // pure white for tower
@@ -33,6 +36,7 @@ public class YellowTrigger : MonoBehaviour
         {
             abilityMessageUI.SetActive(false);
         }
+        audioManager.PlaySong(startSong,0);
     }
 
     void OnTriggerEnter(Collider other)
@@ -41,6 +45,7 @@ public class YellowTrigger : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player has picked up yellow paint");
+            audioManager.PlaySong(yellowSong,0);
             player.hasYellow = true;
             if (MainManager.instance != null)
             {
