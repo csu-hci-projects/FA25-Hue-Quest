@@ -1,4 +1,6 @@
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainManager : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class MainManager : MonoBehaviour
     public bool hasYellow = false;
     public bool hasPurpule = false;
     public bool hasOrange = false;
+    [SerializeField] GameObject settingsMenu;
     void Awake()
     {
         if (instance != null)
@@ -26,12 +29,25 @@ public class MainManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void toggleMenu(bool toggle)
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) || toggle)
+        {
+            if (settingsMenu.activeSelf)
+            {
+                settingsMenu.SetActive(false);
+            }
+            else
+            {
+                settingsMenu.SetActive(true);
+            }
+        }
+    }
+
     public void resetAll()
     {
-        hasBlue = false;
-        hasRed = false;
-        hasGreen = false;
-        hasOrange = false;
-        hasYellow = false;
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("HubWorld");
     }
 }

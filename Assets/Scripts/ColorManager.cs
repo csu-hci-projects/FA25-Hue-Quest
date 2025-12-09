@@ -28,15 +28,7 @@ public class ColorManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        MainManager.instance.toggleMenu(false);
     }
 
-    public void resetAll()
-    {
-        hasBlue = false;
-        hasRed = false;
-        hasGreen = false;
-        hasOrange = false;
-        hasYellow = false;
-    }
 }
