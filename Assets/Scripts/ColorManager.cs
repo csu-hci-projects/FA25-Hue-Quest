@@ -28,6 +28,7 @@ public class ColorManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        MainManager.instance.toggleMenu(false);
     }
+
 }

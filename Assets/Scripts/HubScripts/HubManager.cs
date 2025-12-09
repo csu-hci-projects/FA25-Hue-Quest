@@ -50,7 +50,7 @@ public class Manager : MonoBehaviour
     public void Settings()
     {
         audioManager.PlaySelect();
-        audioManager.toggleMenu(true);
+        MainManager.instance.toggleMenu(true);
         Debug.Log("Settings Button Pressed");
     }
 

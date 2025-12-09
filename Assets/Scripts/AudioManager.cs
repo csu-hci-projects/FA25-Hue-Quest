@@ -6,7 +6,6 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource SFXSource;
-    [SerializeField] GameObject settingsMenu;
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider SFXSlider;
     
@@ -21,26 +20,6 @@ public class AudioManager : MonoBehaviour
         musicSource.volume = 0.5f;
         SFXSource.volume = 0.3f;
         PlaySong(BGM, 0);
-    }
-
-    void Update()
-    {
-        toggleMenu(false);
-    }
-
-    public void toggleMenu(bool toggle)
-    {
-        if (Input.GetKeyDown(KeyCode.Escape) || toggle)
-        {
-            if (settingsMenu.activeSelf)
-            {
-                settingsMenu.SetActive(false);
-            }
-            else
-            {
-                settingsMenu.SetActive(true);
-            }
-        }
     }
 
     public void PlaySong(AudioClip song, int statTime)
