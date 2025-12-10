@@ -39,12 +39,28 @@ public class MainManager : MonoBehaviour
             if (settingsMenu.activeSelf)
             {
                 settingsMenu.SetActive(false);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
             else
             {
                 settingsMenu.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
+    }
+
+    public void changeMusic()
+    {
+        AudioManager audio = FindAnyObjectByType<AudioManager>();
+        audio.changeMusicVolume();
+    }
+
+    public void changeSFX()
+    {
+        AudioManager audio = FindAnyObjectByType<AudioManager>();
+        audio.changeSFXVolume();
     }
 
     public void resetAll()

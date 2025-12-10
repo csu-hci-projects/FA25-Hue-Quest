@@ -2500,6 +2500,8 @@ MonoBehaviour:
   hasPurpule: 0
   hasOrange: 0
   settingsMenu: {fileID: 919638989}
+  musicSlider: {fileID: 929648848}
+  SFXSlider: {fileID: 995920370}
 --- !u!4 &637749711
 Transform:
   m_ObjectHideFlags: 0
@@ -4105,9 +4107,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1024034687}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: changeMusicVolume
+      - m_Target: {fileID: 637749710}
+        m_TargetAssemblyTypeName: MainManager, Assembly-CSharp
+        m_MethodName: changeMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4271,9 +4273,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1024034687}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: changeSFXVolume
+      - m_Target: {fileID: 637749710}
+        m_TargetAssemblyTypeName: MainManager, Assembly-CSharp
+        m_MethodName: changeSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4759,7 +4761,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251238789}
   m_LocalRotation: {x: 0, y: -0.43648762, z: 0, w: 0.8997103}
-  m_LocalPosition: {x: 0, y: 0, z: 86}
+  m_LocalPosition: {x: 0, y: 0, z: 108}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6014,6 +6016,10 @@ PrefabInstance:
     - target: {fileID: 1585274708095451728, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2477155740227230114, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
+      propertyPath: BGM
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2477155740227230114, guid: f05635403ba3d2c46aa0e41edec258c7, type: 3}
       propertyPath: SFXSlider
